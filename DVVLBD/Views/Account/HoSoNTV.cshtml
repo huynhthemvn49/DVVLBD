@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Hồ sơ Người tìm việc";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <div class="col-sm-4">
+        @Html.Action("ChuyenMucNTV", "Account")
+    </div>
+    <div class="col-sm-8" id="Candidate_Mana">
+        <script>
+            $(function () {
+                $(".menu-content a:eq(0)").click(function () {
+                    $.ajax({
+                        url: "/Account/HoSoXVCuaNTV",
+                        success: function (respone) {
+                            $("#Candidate_Mana").html(respone);
+                        }
+                    });
+                });
+                $(".menu-content a:eq(1)").click(function () {
+                    $.ajax({
+                        url: "/Account/QuanLyHoSoCuaNTV",
+                        success: function (respone) {
+                            $("#Candidate_Mana").html(respone);
+                        }
+                    });
+                });
+                $(".menu-content a:eq(2)").click(function () {
+                    $.ajax({
+                        url: "/Account/ThongTinTaiKhoanNTV",
+                        success: function (respone) {
+                            $("#Candidate_Mana").html(respone);
+                        }
+                    });
+                });
+            });
+        </script>
+        @if (Session["hhh1"] == null)
+        {
+            @Html.Action("HoSoXVCuaNTV", "Account")
+        }
+        else
+        {
+            @Html.Action("QuanLyHoSoCuaNTV", "Account")
+        }
+    </div>
+</div>

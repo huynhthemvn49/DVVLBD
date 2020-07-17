@@ -1,0 +1,688 @@
+﻿
+
+.pr-0 {
+    padding-right: 0 !important;
+}
+
+/*TIN TỨC ----  _Slider.cshtml*/
+.news_slide {
+    overflow: hidden;
+}
+
+    .news_slide img {
+        height: 200px;
+        width: 100%;
+    }
+
+.news_slide_tit {
+    font-family: 'Tahoma';
+    font-size: 17px;
+    color: #1d70b7;
+    font-weight: bold;
+    margin: 5px;
+}
+
+    .news_slide_tit a {
+        text-decoration: none;
+    }
+
+.news_slide_tomtat {
+    padding:0 5px;
+    font-size: 14px;
+}
+.list-news-item {
+    max-height:415px;
+    overflow:scroll;
+    overflow-x:hidden ;
+}
+
+.list-news-item::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+.list-news-item::-webkit-scrollbar
+{
+	width: 5px;
+	background-color: #F5F5F5;
+}
+
+.list-news-item::-webkit-scrollbar-thumb
+{
+	background-color: #0ae;
+	
+	background-image: -webkit-gradient(linear, 0 0, 0 100%,
+	                   color-stop(.5, rgba(255, 255, 255, .2)),
+					   color-stop(.5, transparent), to(transparent));
+}
+
+.news_item {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 10px;
+}
+
+.news_item_cont a {
+    font-size: 14px;
+    color: #575756;
+    text-decoration: none;
+}
+
+.news_tit {
+    padding-bottom: 5px;
+}
+
+    .news_tit:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 50%;
+        background-image: -webkit-linear-gradient(left, #0799ff, #9dfeaf);
+    }
+
+    .news_tit a {
+        background-color: white;
+        position: relative;
+        list-style: none;
+        color: #c00d0d;
+        font-weight: 700;
+        padding-right:10px
+    }
+
+.news_item_img img {
+    width: 100%;
+    height: 65px;
+}
+
+.news_item_cont {
+    line-height: 20px;
+}
+
+.carousel-indicators {
+    display: none;
+}
+/* END  TIN TỨC ----  _Slider.cshtml*/
+
+
+/*TIN TỨC DƯỚI SLIDE*/
+.list-tinduoi {
+    height:125px;
+    overflow:hidden;
+}
+.tinduoi {
+    padding-top: 20px;
+}
+
+.tinduoi_img img {
+    width: 100%;
+    height: 70px;
+}
+.tinduoi_cont p {
+    color:#575756;
+    font-size:12px;
+}
+.block-ellipsis {
+    display: block;
+    display: -webkit-box;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    line-height: normal;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.block-ellipsis2 {
+    display: block;
+    display: -webkit-box;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    line-height: 1.25;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.owl-nav {
+    left: 0;
+    position: absolute;
+    top: 25%;
+    color: white;
+    font-size: 20px;
+    width: 100%;
+}
+
+.owl-prev {
+    float: left;
+    opacity: 0.5;
+    margin-left: 30px !important;
+}
+
+    .owl-prev:hover {
+        opacity: 1;
+    }
+
+.owl-next {
+    float: right;
+    opacity: 0.5;
+    margin-right: 30px !important;
+}
+
+.owl-next:hover {
+        opacity: 1;
+        transition: 0.5s;
+    }
+
+.owl-theme .owl-nav [class*='owl-']:hover {
+    background: none !important;
+    color: white;
+    text-decoration: none;
+}
+
+.owl-nav span {
+    font-size: 50px;
+}
+
+.owl-dots {
+    display: none;
+    margin-top:0 !important;
+}
+/* END NEWS SLIDE ----- _Slider.cshtml*/
+
+.m-0 {
+    margin: 0 !important;
+}
+
+.p-0 {
+    padding: 0 !important;
+}
+
+.carousel_Nh {
+    padding: 0 0;
+}
+/* END NEWS SLIDE ----- _Slider.cshtml*/
+
+
+
+
+
+
+/*SLIDE CHỖ HÌNH CÁC LỚP HỌC (NHUT UPDATE)  ----  _QuangCaoVD.cshtml */
+.lophoctt .owl-nav {
+    color: black;
+}
+
+.lophoctt .owl-dots {
+    right: 0;
+    position: absolute;
+    display: grid;
+    bottom: 5%;
+}
+.lophoctt .owl-dots span {
+    border-radius:0 !important;
+    width:11px !important;
+    height:11px !important;
+}
+.lophoctt .owl-dots .active span {
+    background:blue !important;
+}
+.lophoctt {
+    padding: 0 !important;
+}
+
+.lophoctt-item {
+    height: 330px;
+}
+
+    .lophoctt-item img {
+        height: 100%;
+    }
+
+.owl-theme .owl-nav [class*='owl-']:hover {
+    color: black;
+}
+/*END SLIDE CHỖ HÌNH CÁC LỚP HỌC (NHUT UPDATE)  ----  _QuangCaoVD.cshtml */
+
+
+/*QC-RIGHT UPDATE NHUT - TD_LDMoiNhat.cshtml  */
+.QC-right {
+    width: 100% !important;
+    padding-bottom: 16px !important;
+    padding-top: 0 !important;
+}
+
+.div_qccty img {
+    height: 150px !important;
+}
+
+
+
+/*DỊCH VỤ -----   _Slider.cshtml  */
+.dichvu {
+    padding: 20px 0;
+    background-color: #e6e4ea;
+    display:flex;
+}
+.dichvu-item {
+    width:33%;
+    padding:0 20px;
+}
+
+.dichvu-img {
+    height: 60px;
+}
+.dichvu-img img {
+   width: 100%;
+     height: 100%;
+ }
+
+    .dichvu-img:hover {
+        transition: all 0.5s;
+        transform: scale(1.075);
+    }
+
+    /*END DỊCH VỤ -----   _Slider.cshtml */
+
+
+    /* CÁC TUYỂN DỤNG MỚI NHẤT _TD_MoiNhat.cshtml */
+    .jobpost-title-Nh p {
+        font-size:13px;
+        color: #22924c;
+        font-weight: 600;
+    }
+    .jobpost-title-Nh {
+        border-bottom: 1px dashed #ccc;
+    }
+    .box-img {
+        width: 40px;
+        padding-right: 0;
+        height: 40px;
+        box-shadow: 1px 0px 2px 0px #a98f8f;
+
+    }
+    .txt-hot {
+        margin-top:5px;
+        /*float: right;*/
+        margin-bottom: 10px;
+        width: 24px;
+        height: 18px;
+        line-height: 18px;
+        text-align: center;
+        color: #fff;
+        font-size: 10px;
+        font-weight: 700;
+        background-color: red;
+        border-radius: 3px;
+        /*position: absolute;*/ 
+        right:0;
+        top: 0;
+    }
+    .btnChat {
+        position: absolute;
+        bottom: calc(50% - 15px);
+        right: 0;
+    }
+     /* END  CÁC TUYỂN DỤNG MỚI NHẤT _TD_MoiNhat.cshtml */
+
+
+
+/*STATUS ONLINE OFFLINE ---  TD_MoiNhat.cshtml  ,   LD_MoiNhat.cshtml*/
+.status-online {
+        padding:0 8px;
+        right: 0;
+        bottom:0;
+        position: absolute;
+        font-size: 11px;
+        color:white;
+        background-color:green;
+        border-radius:15px;
+    }
+    .status-offline {
+        padding: 0 8px;
+        right: 0;
+        bottom:0;
+        position: absolute;
+        font-size: 11px;
+        color: white;
+        background-color: #777;
+        border-radius: 15px;
+    }
+    /* END STATUS ONLINE OFFLINE ---  TD_MoiNhat.cshtml  ,   LD_MoiNhat.cshtml*/
+
+
+
+
+
+
+    /*Ô TÌM KIẾM CSS UPDATE NHUT   - TD_LDMoiNhat.cshtml */
+    .boxSearch {
+        background-color: rgba(18,67,149,0.8);
+        padding: 15px 10px;
+        margin:0 0 10px 0;
+        box-shadow: 1px 2px 3px 0px;
+    }
+
+        .boxSearch select {
+            width: 100%;
+            border-radius: 0;
+            color: black;
+            height:40px;
+        }
+
+        .boxSearch input {
+            height: 40px;
+            font-style: italic;
+            border-radius: 0;
+            padding-left: 15%;
+            color: black;
+            width:100%;
+        }
+
+        .boxSearch a {
+            background-color: #F1A121;
+            width: 100%;
+            border-radius: 0 !important;
+            color: white;
+            height: 40px;
+            font-size:18px;
+        }
+
+    .tk-tukhoa, .tk-nganh, .tk-luong {
+        position: relative;
+    }
+
+        .tk-tukhoa i, .tk-nganh i, .tk-luong i {
+            position: absolute;
+            font-size: 22px;
+            top: 25%;
+            left: 10%;
+            color: #62636e;
+            z-index: 9999;
+        }
+
+    .select2-selection--single {
+        height: 50px !important;
+        border-radius: 0 !important;
+        padding-left: 15%;
+    }
+
+    .select2 {
+        width: 100% !important;
+    }
+
+    .select2-selection__rendered {
+        margin-top: 5%;
+    }
+
+    .select2-selection__arrow {
+        top: 20% !important;
+    }
+    /*END Ô TÌM KIẾM CSS UPDATE NHUT  - TD_LDMoiNhat.cshtml */
+
+
+
+
+
+
+    /*SLIDE QUẢNG CÁO CSS UPDATE NHUT  - TD_LDMoiNhat.cshtml */
+    .QC-Nh-title h4 {
+        font-family: arial, sans-serif;
+        font-size: 14px;
+        line-height: 1.1;
+        font-weight: bold;
+        text-align: center;
+        background-color: #006fc7;
+        color: white;
+        padding: 13.5px;
+        margin: 0;
+    }
+    .QC-Nh-list {
+        padding:0 10px;
+        border-left:1px solid #ccc;
+        border-right:2px solid #ccc;
+        border-bottom:1px solid #ccc;
+    }
+    .QC-Nh-item {
+        padding: 10px 0;
+        border-bottom: 1px dashed #ccc;
+    }
+    .QC-Nh-item-name p {
+        font-weight: 600;
+        color: #363636;
+        font-size: 14px;
+        margin: 5px 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .QC-Nh-item-com {
+        display:flex;
+    }
+    .QC-Nh-item-com p {
+        color: #b7b2b2;
+        font-weight: 600;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+.QC-Nh-item-info {
+    font-size: 12px;
+    color: #6d6060;
+    margin: 0;
+}
+
+    .QC-Nh-item-info span {
+        padding: 5px 0;
+        color: #6770f3;
+    }
+
+.QC-Nh-offline {
+     width:10px;
+     height:10px;
+     background: rgb(66, 183, 42);
+     border-radius:10px;
+     margin-left:5px;
+}
+.QC-Nh-btnChat {
+    right: 0;
+    position: absolute;
+    top: 16.5px;
+}
+
+.carousel-QC-Nh {
+    padding: 0;
+}
+
+    .carousel-QC-Nh .owl-nav {
+        left: 0;
+        position: absolute;
+        top: calc(50% - 25px);
+        color: black;
+        font-size: 20px;
+        width: 100%;
+        color:white;
+        display:none;
+     }
+    .carousel-QC-Nh .owl-dots {
+        display: block !important;
+     }
+    .carousel-QC-Nh .owl-prev, .carousel-QC-Nh .owl-next {
+        background-color: black !important;
+        height: 30px;
+        width: 30px;
+        border-radius: 30px !important;
+      }
+    .carousel-QC-Nh .owl-nav [class*='owl-']:hover {
+        background-color: #006fc7 !important;
+       
+    }
+   .carousel-QC-Nh .owl-prev span, .carousel-QC-Nh .owl-next span {
+        font-size: 20px;
+   }
+    /*END SLIDE QUẢNG CÁO CSS UPDATE NHUT  - TD_LDMoiNhat.cshtml */
+
+
+/*TƯ VẤN - KỶ NĂNG*/
+    .tuvan-item {
+        padding:10px 0;
+        transition: all 0.25s;
+    }
+    .tuvan-item:last-child {
+        margin:0;
+    }
+    .tuvan-item:hover {
+        transform:scale(1.025);
+        transition:all 0.25s;
+    }
+    .tuvan-item-title {
+        color: #222;
+        font-size: 16px;
+        line-height: 1.4;
+        font-weight: 700;
+        margin-bottom: 0px;
+        max-height: 48px;
+        padding: 0;
+    display: -webkit-box;
+    max-width: 100%;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    }
+    .tuvan-item-title:hover {
+        text-decoration:none;
+    }
+
+.tuvan-item-des {
+    line-height:normal;     
+    font-size: 15px;
+    color: #666666;
+    height: 35px;
+    padding: 0;
+    display: -webkit-box;
+    max-width: 100%;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+    .tuvan-item-time {
+        color: #867878;
+        font-family: "Segoe UI",Arial,sans-serif;
+        padding: 0px 5px;
+        font-size:12px;
+    }
+    .tuvan-item-time i:last-child {
+        padding:0 10px;
+    }
+    .tuvan-news {
+        height:100%;
+        position:relative;
+        transition:all 0.25s;
+        margin-top:10px;
+    }
+    .tuvan-news-img {
+        width:100%;
+        height:484px;
+    }
+    .tuvan-news::before {
+        content: "";
+        z-index: 0;
+        width: 100%;
+        display: inline-block;
+        height: 50%;
+        position: absolute;
+        background-image: linear-gradient(rgba(255,255,255,0), #000);
+        bottom: 0;
+    }
+    .tuvan-news:hover {
+        transform: scale(1.025);
+        transition: all 0.25s;
+    }
+    .tuvan-content {
+        position: absolute;
+        padding: 0 25px 25px 25px;
+        bottom: 0;
+        left: 0;
+        color: white;
+    }
+    .tuvan-title {
+        font-size: 20px;
+        color: white;
+        line-height: 25px;
+        margin-bottom: 20px;
+        text-decoration:none;
+    }
+    .tuvan-title:hover {
+        color: #00c0f3;
+        text-decoration:none;
+   }
+    .tuvan-des {
+        margin:0;
+        font-size:15px;
+    }
+   
+/*END TƯ VẤN - KỶ NĂNG*/
+
+
+
+
+@media only screen and (max-width:768px) {
+    .news_slide img {
+        height: 150px;
+    }
+    .txt-hot {
+        right:5%;
+    }
+    .ngaydang {
+        display:none;
+    }
+    .txt-hot {
+        display:none;
+    }
+    .btnChat {
+        bottom:0;
+    }
+   
+    .dichvu-item {
+        width:100%;
+        margin-bottom:10px;
+    }
+    .tuvan-des {
+        display:none;
+    }
+    .tuvan-news-img {
+        height:300px;
+    }
+   
+}
+@media only screen and (max-width:576px) {
+    .dichvu {
+        display: block;
+    }
+}
+@media only screen and (max-width:992px) {
+    #number_slideshow {
+        width:50%;
+        margin:0 auto;
+    }
+     .number_slideshow_nav {
+        width:50% !important;
+    }
+}
+@media only screen and (max-width:1024px) {
+    .SliderTinHotUpdate_Nh {
+        display:none;
+    }
+
+}
+
+
+
+
+

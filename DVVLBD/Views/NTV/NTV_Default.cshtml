@@ -1,0 +1,60 @@
+﻿@foreach (DVVLBD.Models.dvvlBD.NguoiTimViec_HS th in Model)
+{
+    <div class="item-jobpost" style="border-bottom: 1px solid #5CB6CE">
+        <div class="row">
+            <div class="col-md-10">
+                <div class="col-md-6">
+                    <h5>
+                        <a class="Phu_header" href="/NTV/NTV_Detail/@th.ID_HSXinViec">@th.TenHSXinViec</a>
+                    </h5>
+                    <ul class="list-inline">
+                        <li>
+                            <a class="Phu_header" href="/NTV/NTV_Detail/@th.ID_HSXinViec">@th.NguoiTimViec.HoTen</a>
+                        </li>
+                        <li>
+                            <label class="label bg-green lighten-1">@th.NguoiTimViec.DM_NganhDaoTao.TenNganhDaoTao</label>
+                        </li>
+                    </ul>
+                    <span><i class="fa fa-child m-r-10"></i>&nbsp;Ngày sinh: @Html.FormatValue(@th.NguoiTimViec.NgaySinh, "{0:dd/MM/yyyy}")</span><br />
+                    @if (th.NguoiTimViec.GioiTinh == 1)
+                    {
+                        <span><i class="fa fa-venus-mars m-r-10"></i>&nbsp;Nam</span>
+                    }
+                    else if (th.NguoiTimViec.GioiTinh == 2)
+                    {
+                        <span><i class="fa fa-venus-mars m-r-10"></i>&nbsp;Nữ</span>
+                    }
+                    else
+                    {
+                        <span><i class="fa fa-venus-mars m-r-10"></i>&nbsp;Giới tính không xác định</span>
+                    }
+                </div>
+                <div class="col-md-4 jobpost-location">
+                    <span><i class="fa fa-map-marker m-r-10"></i>&nbsp;@th.NguoiTimViec.DM_DiaChi.TenDiaChi</span><br />
+                    <span><i class="fa fa-briefcase m-r-10"></i>&nbsp;@th.KinhNghiem năm kinh nghiệm</span><br />
+                    <span><i class="fa fa-calendar m-r-10"></i>&nbsp;Ngày tạo: @Html.FormatValue(th.NgayCapNhat, "{0:dd/MM/yyyy}")</span><br />
+                    <span><i class="fa fa-folder-open m-r-10"></i>&nbsp;Chuyên ngành: @th.NguoiTimViec.DM_NganhDaoTao.TenNganhDaoTao</span>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="col-md-2" style="margin-top:15%">
+                    <a class="Phu_header" href="/NTV/NTV_Detail/@th.ID_HSXinViec">
+                        @if (th.NguoiTimViec.AnhDaiDien != "")
+                        {
+                            var anh = th.NguoiTimViec.AnhDaiDien;
+                            <img src="~/Images/NTV_Images/@anh" style="width: 80px" alt="" />
+                        }
+                        else if (th.NguoiTimViec.GioiTinh == 1)
+                        {
+                            <img src="~/Images/NTV_Images/AvataNam.jpg" style="width: 80px" alt="" />
+                        }
+                        else
+                        {
+                            <img src="~/Images/NTV_Images/AvataNu.jpg" style="width: 80px" alt="" />
+                        }
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+}

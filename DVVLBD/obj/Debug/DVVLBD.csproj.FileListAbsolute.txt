@@ -1,0 +1,176 @@
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\DVVLBD.dll.config
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\DVVLBD.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\DVVLBD.pdb
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\Antlr3.Runtime.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\DotNetOpenAuth.AspNet.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\DotNetOpenAuth.Core.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\DotNetOpenAuth.OAuth.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\DotNetOpenAuth.OpenId.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\EntityFramework.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\Microsoft.Data.Edm.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\Microsoft.Data.OData.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\Microsoft.Web.Infrastructure.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\Microsoft.Web.WebPages.OAuth.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\Newtonsoft.Json.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\System.Net.Http.Formatting.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\System.Spatial.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\System.Web.Helpers.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\System.Web.Http.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\System.Web.Http.OData.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\System.Web.Http.WebHost.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\System.Web.Mvc.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\System.Web.Optimization.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\System.Web.Razor.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\System.Web.WebPages.Deployment.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\System.Web.WebPages.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\System.Web.WebPages.Razor.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\WebGrease.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\WebMatrix.Data.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\WebMatrix.WebData.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\EntityFramework.xml
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\Newtonsoft.Json.xml
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\System.Net.Http.Formatting.xml
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\System.Web.Helpers.xml
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\System.Web.Http.xml
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\System.Web.Http.WebHost.xml
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\System.Web.Mvc.xml
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\System.Web.Razor.xml
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\System.Web.WebPages.xml
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\System.Web.WebPages.Deployment.xml
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\System.Web.WebPages.Razor.xml
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\WebMatrix.Data.xml
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\WebMatrix.WebData.xml
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\DotNetOpenAuth.AspNet.xml
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\DotNetOpenAuth.Core.xml
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\DotNetOpenAuth.OAuth.xml
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\DotNetOpenAuth.OpenId.xml
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\System.Web.Http.OData.xml
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\Microsoft.Data.Edm.xml
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\Microsoft.Data.OData.xml
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\System.Spatial.xml
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\de\Microsoft.Data.Edm.resources.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\es\Microsoft.Data.Edm.resources.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\fr\Microsoft.Data.Edm.resources.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\it\Microsoft.Data.Edm.resources.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\ja\Microsoft.Data.Edm.resources.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\ko\Microsoft.Data.Edm.resources.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\ru\Microsoft.Data.Edm.resources.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\de\Microsoft.Data.OData.resources.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\es\Microsoft.Data.OData.resources.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\fr\Microsoft.Data.OData.resources.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\it\Microsoft.Data.OData.resources.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\ja\Microsoft.Data.OData.resources.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\ko\Microsoft.Data.OData.resources.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\ru\Microsoft.Data.OData.resources.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\de\System.Spatial.resources.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\es\System.Spatial.resources.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\fr\System.Spatial.resources.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\it\System.Spatial.resources.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\ja\System.Spatial.resources.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\ko\System.Spatial.resources.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\ru\System.Spatial.resources.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\zh-Hans\System.Spatial.resources.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\zh-Hant\System.Spatial.resources.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\obj\Debug\DVVLBD.csprojResolveAssemblyReference.cache
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\obj\Debug\DVVLBD.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\obj\Debug\DVVLBD.pdb
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\EntityFramework.SqlServer.dll
+D:\DoAnTotNghiep\DVVLBD\DVVLBD\bin\EntityFramework.SqlServer.xml
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\DVVLBD.dll.config
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\DVVLBD.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\DVVLBD.pdb
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\Antlr3.Runtime.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\DotNetOpenAuth.AspNet.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\DotNetOpenAuth.Core.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\DotNetOpenAuth.OAuth.Consumer.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\DotNetOpenAuth.OAuth.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\DotNetOpenAuth.OpenId.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\EntityFramework.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\EntityFramework.SqlServer.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\Microsoft.Data.Edm.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\Microsoft.Data.OData.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\Microsoft.Web.Infrastructure.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\Microsoft.Web.WebPages.OAuth.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\Newtonsoft.Json.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\System.Net.Http.Formatting.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\System.Spatial.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\System.Web.Helpers.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\System.Web.Http.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\System.Web.Http.OData.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\System.Web.Http.WebHost.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\System.Web.Mvc.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\System.Web.Optimization.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\System.Web.Razor.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\System.Web.WebPages.Deployment.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\System.Web.WebPages.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\System.Web.WebPages.Razor.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\WebGrease.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\WebMatrix.Data.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\WebMatrix.WebData.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\EntityFramework.xml
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\EntityFramework.SqlServer.xml
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\Newtonsoft.Json.xml
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\System.Net.Http.Formatting.xml
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\System.Web.Helpers.xml
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\System.Web.Http.xml
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\System.Web.Http.WebHost.xml
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\System.Web.Mvc.xml
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\System.Web.Razor.xml
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\System.Web.WebPages.xml
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\System.Web.WebPages.Deployment.xml
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\System.Web.WebPages.Razor.xml
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\WebMatrix.Data.xml
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\Microsoft.Web.WebPages.OAuth.xml
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\WebMatrix.WebData.xml
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\DotNetOpenAuth.AspNet.xml
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\DotNetOpenAuth.Core.xml
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\DotNetOpenAuth.OAuth.Consumer.xml
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\DotNetOpenAuth.OAuth.xml
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\DotNetOpenAuth.OpenId.xml
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\System.Web.Http.OData.xml
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\Microsoft.Data.Edm.xml
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\Microsoft.Data.OData.xml
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\System.Spatial.xml
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\de\Microsoft.Data.Edm.resources.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\es\Microsoft.Data.Edm.resources.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\fr\Microsoft.Data.Edm.resources.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\it\Microsoft.Data.Edm.resources.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\ja\Microsoft.Data.Edm.resources.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\ko\Microsoft.Data.Edm.resources.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\ru\Microsoft.Data.Edm.resources.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\de\Microsoft.Data.OData.resources.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\es\Microsoft.Data.OData.resources.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\fr\Microsoft.Data.OData.resources.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\it\Microsoft.Data.OData.resources.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\ja\Microsoft.Data.OData.resources.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\ko\Microsoft.Data.OData.resources.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\ru\Microsoft.Data.OData.resources.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\de\System.Spatial.resources.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\es\System.Spatial.resources.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\fr\System.Spatial.resources.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\it\System.Spatial.resources.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\ja\System.Spatial.resources.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\ko\System.Spatial.resources.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\ru\System.Spatial.resources.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\zh-Hans\System.Spatial.resources.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\bin\zh-Hant\System.Spatial.resources.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\obj\Debug\DVVLBD.dll
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\obj\Debug\DVVLBD.pdb
+E:\DAI HOC\Do An Tot Nghiep\DVVLBD_18032020\DVVLBD\DVVLBD\obj\Debug\DVVLBD.csprojResolveAssemblyReference.cache

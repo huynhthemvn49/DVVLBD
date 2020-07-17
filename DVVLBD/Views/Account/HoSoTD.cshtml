@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Hồ sơ Doanh nghiệp";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <div class="col-sm-4">
+        @Html.Action("ChuyenMucTD", "Account")
+    </div>
+    <div class="col-sm-8" id="Candidate_Mana">
+        <script>
+            $(function () {
+                $(".menu-content a:eq(0)").click(function () {
+                    $.ajax({
+                        url: "/Account/HoSoTDCuaDN",
+                        success: function (respone) {
+                            $("#Candidate_Mana").html(respone);
+                        }
+                    });
+                });
+                $(".menu-content a:eq(1)").click(function () {
+                    $.ajax({
+                        url: "/Account/QuanLyHoSoCuaDN",
+                        success: function (respone) {
+                            $("#Candidate_Mana").html(respone);
+                        }
+                    });
+                });
+                $(".menu-content a:eq(2)").click(function () {
+                    $.ajax({
+                        url: "/Account/ThongTinTaiKhoanTD",
+                        success: function (respone) {
+                            $("#Candidate_Mana").html(respone);
+                        }
+                    });
+                });
+            });
+        </script>
+        @if(Session["hhh"] == null)
+        {
+            @Html.Action("HoSoTDCuaDN", "Account")
+        }            
+        else 
+        {
+            @Html.Action("QuanLyHoSoCuaDN", "Account")
+        }
+        
+    </div>
+</div>

@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Ứng Viên";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section>
+    <div class="divide16"></div>
+    <div class="main-content wrapper">
+
+        @Html.Action("TimKiemNTV", "NTV")
+        
+        @Html.Action("DanhSachNTV", "NTV")
+
+    </div>
+</section>
+

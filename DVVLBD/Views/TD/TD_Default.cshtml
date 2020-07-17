@@ -1,0 +1,78 @@
+﻿@foreach (DVVLBD.Models.dvvlBD.DoanhNghiep_HS th in Model)
+{
+    <div class="item-jobpost">
+        <div class="row">
+            <div class="col-md-1" style="margin-top:15px">
+                <ul class="list-inline">
+                    <li>
+                        <a class="Phu_header" href="/TD/TD_Detail/@th.ID_HSTuyenDung">
+                            @if (th.DoanhNghiep.LoGo != "")
+                            {
+                                var logo = th.DoanhNghiep.LoGo;
+                                <img src="~/Images/DN_Images/@logo" style="width:68px" alt="">
+                            }
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-5">
+                <h5>
+                    <a class="Phu_header" href="/TD/TD_Detail/@th.ID_HSTuyenDung">@th.DoanhNghiep.TenDoanhNghiep</a>
+                </h5>
+                <h5>
+                    <a class="Phu_header" href="/TD/TD_Detail/@th.ID_HSTuyenDung">@th.TieuDeHoSo</a>
+                </h5>
+                <h6>
+                    <label class="label bg-green lighten-1">@th.DM_MucLuong.TenMucLuong</label>
+                </h6>
+
+                <h6 class="Phu_header">
+                    <span>@Html.FormatValue(th.NgayCapNhat, "{0:dd/MM/yyyy}")</span>
+
+                </h6>
+
+            </div>
+            <div class="col-md-4 jobpost-location">
+                @if (th.DoanhNghiep.ID_QuanHuyen != 0)
+                {
+                    <span><i class="fa fa-map-marker m-r-10"></i>&nbsp;@th.DoanhNghiep.DM_DiaChi.TenDiaChi</span><br />
+                }
+                else
+                {<span><i class="fa fa-map-marker m-r-10"></i>&nbsp;Không xác định địa chỉ</span><br /> }
+                @if (th.ID_MucLuong != 0 && th.ID_MucLuong != null)
+                {
+                    <span><i class="fa fa-money m-r-10"></i>&nbsp;@th.DM_MucLuong.TenMucLuong</span><br />
+                }
+                else
+                {<span><i class="fa fa-money m-r-10"></i>&nbsp;Lương thỏa thuận</span><br /> }
+                @if (th.YeuCauNamKinhNghiem != null)
+                {
+                    if (th.YeuCauNamKinhNghiem > 0)
+                    {
+                        <span><i class="fa fa-folder-open m-r-10"></i>&nbsp;Kinh nghiệm: @th.YeuCauNamKinhNghiem năm</span><br />
+                    }
+                    else
+                    {
+                        <span><i class="fa fa-folder-open m-r-10"></i>&nbsp;Không yêu cầu kinh nghiệm</span><br />
+                    }
+                }
+                else
+                {<span><i class="fa fa-folder-open m-r-10"></i>&nbsp;Không yêu cầu kinh nghiệm</span><br />}
+                @if (th.YeuCauGioiTinh == 1)
+                {
+                    <span><i class="fa fa-venus-mars"></i>&nbsp;<strong> Giới tính: </strong>Nam</span><br />
+                }
+                else if (th.YeuCauGioiTinh == 2)
+                {
+                    <span><i class="fa fa-venus-mars"></i>&nbsp;<strong> Giới tính: </strong>Nữ</span><br />
+                }
+                else
+                {<span><i class="fa fa-venus-mars"></i>&nbsp;Không yêu cầu giới tính</span><br />}
+                
+            </div>
+            <div class="col-md-2 jobpost-apply-btn">
+                <a href="/TD/TD_Detail/@th.ID_HSTuyenDung" class="btn btn-primary btn-block btn-outline btn-sm">Chi tiết <i class="fa fa-angle-right"></i></a>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,145 @@
+﻿@model DVVLBD.Models.dvvlBD.NguoiTimViec_HS
+@{
+    ViewBag.Title = "Chỉnh sửa hồ sơ xin việc";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/css/Info_Style.css" rel="stylesheet" />
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="container text-center">
+                <h3 style="font-family: monospace; font-weight: lighter; color: #0094ff">THÔNG TIN HỒ SƠ</h3>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    @using (Html.BeginForm("ChinhSuaHSNTV", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="container">
+            <form class="info_form">
+                <h1 class="info_header">Vui lòng điền đầy đủ thông tin hồ sơ :</h1>
+                <div class="row">
+                    <div class="contentform">
+                        <div class="leftcontact">
+                            @Html.HiddenFor(th => th.ID_HSXinViec)
+                            @Html.HiddenFor(th => th.ID_NTV)
+                            @Html.HiddenFor(th => th.TinhTrangHS)
+                            @Html.HiddenFor(th => th.LuotXem)
+                            @Html.HiddenFor(th => th.NgayTao)
+                            @Html.HiddenFor(th => th.NgayHSHetHan)
+                            @Html.HiddenFor(th => th.NguoiTao)
+                            @Html.HiddenFor(th => th.NguoiCapNhat)
+                            <div class="form-group" style="margin-bottom: 0px;">
+                                <p>Tiêu đề hồ sơ của bạn <span>*</span></p>
+                                <span class="icon-case"><i class="fa fa-file-text"></i></span>
+                                @Html.TextBoxFor(th => th.TenHSXinViec, new { @class = "form-control", @required = "required", @style = " height: 42px" })
+                                <div class="validation"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <p>Chức danh mong muốn <span>*</span></p>
+                                <span class="icon-case "><i class="fa fa-briefcase"></i></span>
+                                @Html.DropDownList("ID_ChucDanhMongMuon", null, new { @class = "form-control", style = "width: 75%; height: 43px" })
+                                <div class="validation"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <p>Mức lương mong muốn <span>*</span></p>
+                                <span class="icon-case"><i class="fa fa-money"></i></span>
+                                @Html.DropDownList("ID_MucLuongMongMuon", null, new { @class = "form-control", style = "width: 75%; height: 43px" })
+                                <div class="validation"></div>
+                            </div>
+
+                            <div class="form-group" style="margin-bottom: 0px;">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <p>Ngày có thể bắt đầu (cũ)</p>
+                                        <span class="icon-case"><i class="fa fa-calendar"></i></span>
+                                        @Html.TextBoxFor(th => th.NgayBatDau, "{0:dd/MM/yyyy}", new { @class = "form-control", @required = "required", @style = " height: 42px" })
+                                    </div>
+                                    <div class="col-md-7">
+                                        <p>Ngày có thể bắt đầu (mới)</p>
+                                        <input type="date" name="NgayBatDau1" id="year" style="height: 41px; width: 160px" />
+                                    </div>
+                                </div>
+                                <div class="validation"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <p>Ngành nghề mong muốn <span>*</span></p>
+                                <span class="icon-case"><i class="fa fa-folder-open"></i></span>
+                                @Html.DropDownList("ID_NganhNgheMM", null, new { @class = "form-control", style = "width: 75%; height: 43px" })
+                                <div class="validation"></div>
+                            </div>
+
+                            <div class="form-group" style="margin-bottom: 0px;">
+                                <p>Kinh nghiệm làm việc <span>*</span></p>
+                                <span class="icon-case"><i class="fa fa-file-text"></i></span>
+                                @Html.TextBoxFor(th => th.KinhNghiem, new { @class = "form-control", @required = "required", @style = " height: 42px" })
+                                <div class="validation"></div>
+                            </div>
+
+                            <div class="form-group" style="margin-bottom:0px">
+                                <p>CV (Chỉ chấp nhận định dạng ảnh .pdf)<span>*</span></p>
+                                <span class="icon-case"><i class="fa fa-file-image-o"></i></span>
+                                <div class="image-upload">
+                                    <input id="file-input" type="file" name="CV" />
+                                    @Html.HiddenFor(th => th.CV)
+                                </div>
+                                <span class="help-block" style="font-family: monospace; float: left">@Html.ValidationSummary(false, "", new { @class = "text-danger" })</span>
+                                <div class="validation"></div>
+                            </div>
+                        </div>
+
+                        <div class="rightcontact">
+                            <div class="form-group">
+                                <p>Loại hình doanh nghiệp mong muốn <span>*</span></p>
+                                <span class="icon-case"><i class="fa fa-building"></i></span>
+                                @Html.DropDownList("ID_LoaiHinhDNMM", null, new { @class = "form-control", style = "width: 75%; height: 43px" })
+                                <div class="validation"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <p>Nơi làm việc mong muốn <span>*</span></p>
+                                <span class="icon-case"><i class="fa fa-map-marker"></i></span>
+                                @Html.DropDownList("ID_NoiLamViecMM", null, new { @class = "form-control", style = "width: 75%; height: 43px" })
+                                <div class="validation"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <p>Thời gian làm việc mong muốn <span>*</span></p>
+                                <span class="icon-case"><i class="fa fa-clock"></i></span>
+                                @Html.DropDownList("ID_ThoiGianLamViecMM", null, new { @class = "form-control", style = "width: 75%; height: 43px" })
+                                <div class="validation"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <p>Mô tả thêm <span>*</span></p>
+                                <span class="icon-case"><i class="fa fa-comments"></i></span>
+                                <textarea name="Mota" rows="38" required>@ViewBag.MoTa</textarea>
+                            </div>
+
+                        </div>
+                    </div>
+                    <span class="help-block" style="font-family:monospace">@Html.ValidationSummary()</span>
+                </div>
+                <style>
+                    .btn-glyphicon {
+                        padding: 8px;
+                        background: #ffffff;
+                        margin-right: 4px;
+                    }
+                </style>
+                <div class="row text-center">
+                    <div>
+                        <button type="submit" class="icon-btn btn-success" style="border-radius: 50px"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>Lưu Hồ Sơ</button>
+                    </div>
+
+                </div>
+
+            </form>
+        </div>
+    }
+</section>

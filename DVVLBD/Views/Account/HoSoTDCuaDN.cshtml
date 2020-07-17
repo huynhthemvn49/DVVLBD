@@ -1,0 +1,93 @@
+﻿<style>
+    .ds {
+        display: flex;
+        justify-content: space-between;
+        color: red;
+    }
+
+    .thongbao {
+        text-align: right;
+        color: blue;
+    }
+</style>
+<div id="hstv" class="tab-pane fade in active">
+    <div class="about-container" style="background:none">
+        <div id="wrapper">
+            <div id="page-wrapper">
+                <br />
+                <div class="row">
+                    <button class="btn btn-warning" style="margin-left: 20px; background-color: #d58512; border-color: #985f0d; color: #fff;" onclick="location.href='@Url.Action("TaoHoSoTuyenDung", "TD")'"><i class="fa fa-plus-circle"></i>&nbsp;&nbsp; Tạo hồ sơ mới</button>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                        <thead>
+                                            <tr>
+                                                <th>Tiêu Đề</th>
+                                                <th>Ngày Tạo</th>
+                                                <th>Trạng Thái</th>
+                                                <th>Sửa/Xóa</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @if (ViewBag.DSHSbyDN != null)
+                                            {
+                                                foreach (DVVLBD.Models.dvvlBD.DoanhNghiep_HS item in ViewBag.DSHSbyDN)
+                                                {
+                                                    <tr>
+                                                        <td>@item.TieuDeHoSo</td>
+                                                        <td>@Html.FormatValue(item.NgayTao, "{0:dd/MM/yyyy}")</td>
+                                                        @if (item.TinhTrangHS == 1)
+                                                        {
+                                                            <td>Chờ phê duyệt</td>
+                                                        }
+                                                        else if (item.TinhTrangHS == 2)
+                                                        {
+                                                            if (item.NgayHetHanHS < DateTime.Now)
+                                                            {
+                                                                <td>Được phê duyệt<span class="ds">_Đã Hết Hạn</span></td>
+                                                            }
+                                                            else
+                                                            {
+                                                                <td>Được phê duyệt</td>
+                                                            }
+                                                        }
+                                                        else if (item.TinhTrangHS == 3)
+                                                        {
+                                                            <td class="ds">Hủy phê duyệt</td>
+                                                        }
+                                                        else 
+                                                        {
+                                                            <td class="ds">Không xác định</td>
+                                                        }
+                                                        <td class="center">
+                                                            <a class="btn btn-danger" style="color: #fff; background-color: #d9534f; border-color: #d43f3a;" href="/Account/ChinhSuaHSTD/@item.ID_HSTuyenDung"><span class="glyphicon glyphicon-edit"></span></a>
+                                                            <a class="btn btn-warning" onclick="return btnXoaHSTD()" style="color: #fff; background-color: #f0ad4e; border-color: #eea236;" href="/Account/XoaHSTD/@item.ID_HSTuyenDung"><span class="glyphicon glyphicon-trash"></span></a>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function btnXoaHSTD() {
+        if (confirm("Bạn có thật sự muốn xóa?"))
+            return true;
+        else
+            return false;
+    }
+</script>

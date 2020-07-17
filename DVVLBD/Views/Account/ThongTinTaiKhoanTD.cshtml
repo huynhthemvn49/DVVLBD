@@ -1,0 +1,16 @@
+﻿
+<link href="~/Content/css/them.css" rel="stylesheet" />
+<div class="ww">
+    @foreach (DVVLBD.Models.dvvlBD.DoanhNghiep dn in ViewBag.TD)
+    {
+        <h2>@dn.TenDoanhNghiep</h2>
+        <div>
+            <p>Địa chỉ: @dn.DiaChi</p>
+            <p>Số điện thoại: @dn.DienThoai</p>
+            <p>Email: @dn.Email</p>
+            <p>Giới thiệu chung: @dn.GioiThieuChung</p>
+        </div>
+    }
+    <a href="/Account/ThayDoiThongTinTaiKhoanDN" class="btnchangeacc"><span style="color: #78cdf8;">Thay đổi thông tin tài khoản</span></a>
+</div>
+

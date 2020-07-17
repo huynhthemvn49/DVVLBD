@@ -1,0 +1,153 @@
+﻿
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - Trung tâm Dịch Vụ Việc Làm tỉnh Bình Dương</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script src="~/Scripts/respond.js"></script>
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <link href="~/Content/fontawesome-free-5.9.0-web/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="~/Content/fontawesome-free-5.9.0-web/css/all.min.css" rel="stylesheet" />
+    <link href="~/Content/css/bundlesa3c7.css" rel="stylesheet" />
+    <link href="~/Content/css/Tab_Style.css" rel="stylesheet" />
+    <link href="~/Content/css/TD_LD_Style.css" rel="stylesheet" />
+    <script src="~/Content/alertifyjs/alertify.js"></script>
+    <script src="~/Content/alertifyjs/alertify.min.js"></script>
+    
+
+    <link href="~/Content/alertifyjs/css/alertify.css" rel="stylesheet" />
+
+ 
+</head>
+
+<body>
+
+    <header>
+        <div class="content-wrapper">
+            <div class="row" style="margin: 0; background-color: #F6C600; border: 0; font-size: 13px; border-bottom: 2px solid #ffffff; ">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 wrapper-top" style="">
+                    <p style="padding:10px;margin:0;text-align:left;color:#00598c"><b>Liên hệ quản trị viên: 0902375122</b></p>
+                </div>
+            </div>
+            <div class="col-lg-12" style="background: linear-gradient(to bottom,#F6C600 0,#FFD88E 100%); margin: 0 !important; color: #00598c; padding: 0 !important; height:175px">
+                <div class="col-lg-4">
+                    <a href="~/Home/Index">
+                        <img src="~/Images/ttcvvllogo.png" width="190" height="185" class="logo" />
+                    </a>
+                </div>
+               
+                <div class="col-lg-8">
+                    <section id="login">
+                        @Html.Partial("_LoginPartial")
+                    </section>
+                    <nav style="padding-top:15px">
+                        <ul id="menu">
+                            <li>@Html.ActionLink("Trang Chủ", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Giới Thiệu", "About", "Home")</li>
+                            <li>@Html.ActionLink("Tuyển Dụng", "TD_Main", "TD")</li>
+                            <li>@Html.ActionLink("Ứng Viên", "NTV_Main", "NTV")</li>
+                            <li>@Html.ActionLink("Liên Hệ", "Contact", "Home")</li>
+                        </ul>
+                    </nav>
+                </div>
+                
+            </div>   
+            
+                
+            
+            
+        </div>
+    </header>
+  
+    <div id="body">
+        @RenderSection("featured", required: false)
+        <section class="content-wrapper main-content clear-fix">
+            @RenderBody()
+        </section>
+    </div>
+   
+    <footer class="footer">
+        <div class="content-wrapper">
+            <div class="float-left" style="background: linear-gradient(to bottom,#FFD88E 0,#F6C600 100%); margin: 0 !important; color: #00598c; padding: 0 !important; ">
+                <div class="row" style="margin:0">
+                    <div class="col-lg-7 col-md-6 col-sm-7 col-xs-7" >
+
+                        <div class="row">
+
+                            <div class="col-lg-12 col-md-12">
+                                <h3 class="text-uppercase" style="font-weight:bold;  ">LIÊN HỆ</h3>
+                                <p>
+                                    <i class="fa fa-map-marker"></i>
+                                    <b>
+                                        Trụ sở chính
+                                    </b>:
+                                    369 Đại Lộ Bình Dương, KP.Hòa Lân, Thuận Giao, Thuận An, Bình Dương<br>
+                                    Số điện thoại : (0274) 3.899.019
+                                </p>
+                                <hr />
+                                <p>
+                                    <i class="fa fa-map-marker"></i>
+                                    <b>
+                                        Chi nhánh Dĩ An
+                                    </b>:
+                                    10 Ngô Văn Sở, KP.Bình Minh 2, Dĩ An, Bình Dương.<br>
+                                    Số điện thoại : (0274) 3.775.458
+                                </p>
+                                <hr />
+                                <p>
+                                    <i class="fa fa-map-marker"></i>
+                                    <b>
+                                        Chi nhánh Tân Định
+                                    </b>:
+                                    Đại Lộ Bình Dương, KP 2, Tân Định, Bến Cát, Bình Dương (gần khu du lịch Đại Nam).                                    <br>
+                                    Số điện thoại : (0274) 3.857.679
+                                </p>
+                                <hr />
+                                <p>
+                                    <i class="fa fa-map-marker"></i>
+                                    <b>
+                                        Chi nhánh Tân Uyên
+                                    </b>:
+                                    ĐH421, tổ 4, khu phố 4, Uyên Hưng, Tân Uyên, Bình Dương<br>
+                                    Số điện thoại : (0274) 3.642.414
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-6 col-sm-5 col-xs-5" style="border-radius: 10px">
+                        <h3 class="text-uppercase" style="font-weight:bold;  ">KẾT NỐI</h3>
+                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FTTDVVLBD%2F&tabs=timeline&width=450&height=300&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1647888175295074" style="border: none; overflow: hidden; width: 100%; height: 300px; border-radius: 10px" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    </div>
+
+                </div>
+                <div class="row" style="margin: 0; background-color: #F6C600; border: 0; font-size: 13px; border-top: 2px solid #ffffff; ">
+                    <div class="col-md-12" style="">
+
+                        <p style="padding: 10px; margin: 0; text-align: right; color: #00598c">     © 2020 - Designed by Huỳnh Thêm</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+
+
+  
+</body>
+
+</html>
+

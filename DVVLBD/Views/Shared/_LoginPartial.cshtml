@@ -1,0 +1,41 @@
+﻿<link href="~/Content/css/them.css" rel="stylesheet" />
+@if (Session["Quyen"] == "NTV")
+{
+    if (Session["TinNhanNTV"] == "NEW")
+    {
+        <li class="litaikhoan"><a href="/Account/HoSoNTV" class="test"><i class="fa fa-user"></i>&nbsp;Xin chào: @Session["User"] | Bạn có @Session["Dem"] tin nhắn mới</a></li>
+    }
+    else
+    {
+        <li class="litaikhoan"><a href="/Account/HoSoNTV"><i class="fa fa-user"></i>&nbsp;Xin chào: @Session["User"]</a></li>
+    }
+    <li class="litaikhoan"><a href="/NTV/TaoHoSoTimViec"><i class="fa fa-file"></i>&nbsp; Tạo hồ sơ tìm tiệc</a></li>
+    <li class="litaikhoan"><a href="/Account/Logoff"><i class="fa fa-share"></i>&nbsp;Đăng xuất</a></li>
+}
+else if (Session["Quyen"] == "TD")
+{
+    if (Session["TinNhan"] == "NEW")
+    {
+        <li class="litaikhoan"><a href="/Account/HoSoTD" class="test"><i class="fa fa-user"></i>&nbsp;Xin chào: @Session["User"] | Bạn có @Session["Dem"] tin nhắn mới</a></li>
+    }
+    else
+    {
+        <li class="litaikhoan"><a href="/Account/HoSoTD"><i class="fa fa-user"></i>&nbsp;Xin chào: @Session["User"]</a></li>
+    }
+    <li class="litaikhoan"><a href="/TD/TaoHoSoTuyenDung"><i class="fa fa-file"></i>&nbsp; Tạo hồ sơ tuyển dụng</a></li>
+    <li class="litaikhoan"><a href="/Account/Logoff"><i class="fa fa-share"></i>&nbsp;Đăng xuất</a></li>
+}
+else if (Session["Quyen"] == "ADMIN")
+{
+    <li class="litaikhoan"><a href="/Account/QuanLyAdmin"><i class="fa fa-user"></i>&nbsp;Xin chào @Session["User"]</a></li>
+    <li class="litaikhoan">
+        <a href="/Account/Logoff"><i class="fa fa-share"></i>&nbsp;Đăng xuất</a>
+    </li>
+}
+else
+{
+    <ul>
+        <li>@Html.ActionLink("Đăng ký", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink("Đăng nhập", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}

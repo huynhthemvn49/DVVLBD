@@ -1,0 +1,443 @@
+﻿<style>
+    .d-block {
+        display: block !important;
+    }
+
+    .d-none {
+        display: none !important;
+    }
+
+    .thaydoimaunen {
+        background-color: #808080 !important;
+    }
+</style>
+
+<div class="panel-heading">
+    <h4 class="panel-title" id="btnh4">
+        <a class="btn btn-danger btn-width btn-send-msg btnactive thaydoimaunen" id="ss" onclick="QuanLyHSDN();">Quản lý hồ sơ</a>
+        <a class="btn btn-danger btn-width btn-send-msg btnactive" id="sss" onclick="DuyetHSDN();">Duyệt hồ sơ</a>
+        <a class="btn btn-danger btn-width btn-send-msg btnactive" id="ssss" onclick="DuyetTNDN();">Quản lý tin nhắn</a>
+    </h4>
+</div>
+
+<div id="qlhs" class="tab-pane fade in active" style="display:block">
+    <div class="about-container" style="background:none">
+        <div id="wrapper">
+            <div id="page-wrapper">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                Danh Sách Hồ Sơ Tuyển Dụng _ Đã Được Duyệt
+                            </div>
+                            <div id="list" class="panel-body">
+                                <table class="table table-striped table-bordered table-hover ">
+                                    <thead>
+                                        <tr>
+                                            <th>DNid</th>
+                                            <th>Tên doanh nghiệp</th>
+                                            <th>Tên Hồ sơ</th>
+                                            <th>Lượt xem</th>
+                                            <th>Chi tiết/Xóa</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @if (ViewBag.DoanhNghiep != null)
+                                        {
+
+                                            foreach (DVVLBD.Models.dvvlBD.DoanhNghiep_HS item in ViewBag.DoanhNghiep)
+                                            {
+                                                <tr>
+                                                    <td>@item.ID_HSTuyenDung</td>
+                                                    <td>@item.DoanhNghiep.TenDoanhNghiep</td>
+                                                    <td>@item.TieuDeHoSo</td>
+                                                    <td>@item.SoLuotXem</td>
+                                                    <td class="center">
+                                                        <a class="btn btn-danger" style="color: #fff; background-color: #d9534f; border-color: #d43f3a;" href="/TD/TD_Detail/@item.ID_HSTuyenDung" target="_blank"><span class="glyphicon glyphicon-edit"></span></a>
+                                                        <a class="btn btn-warning" onclick="return btnXoaHSTD()" style="color: #fff; background-color: #f0ad4e; border-color: #eea236;" href="/Account/XoaHSTD/@item.ID_HSTuyenDung"><span class="glyphicon glyphicon-trash"></span></a>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        }
+                                    </tbody>
+
+                                </table>
+                            </div>
+                            <div class="panel-footer">
+                                <ul class="pager" id="pager2">
+                                    <li><a><span class="glyphicon glyphicon-chevron-left"></span></a></li>
+                                    <li><a><span class="glyphicon glyphicon-chevron-right"></span></a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="dhs" class="tab-pane fade in active" style="display:none">
+    <div class="about-container" style="background:none">
+        <div id="wrapper">
+            <div id="page-wrapper">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                Danh Sách Hồ Sơ Tuyển Dụng _ Chờ Được Duyệt
+                            </div>
+                            <div id="listduyet" class="panel-body">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <a href="/Account/DuyetTatCaDN" class="btn btn-info pull-right" style="background: #31b0d5; color: white">
+                                            <span class="fa fa-check-circle"></span>&nbsp;Duyệt Tất Cả
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <a href="/Account/HuyDuyetTatCaDN" class="btn btn-success pull-right" style="background: #eea236; color: white">
+                                            <span class="fa fa-remove"></span>&nbsp;Hủy Duyệt Tất Cả
+                                        </a>
+                                    </div>
+                                </div>
+                                <table class="table table-striped table-bordered table-hover ">
+                                    <thead>
+                                        <tr>
+                                            <th>DNid</th>
+                                            <th>Tên doanh nghiệp</th>
+                                            <th>Tên Hồ sơ</th>
+                                            <th>Lượt xem</th>
+                                            <th>Chi Tiết/Duyệt/Hủy</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @if (ViewBag.DuyetHoSo != null)
+                                        {
+                                            foreach (DVVLBD.Models.dvvlBD.DoanhNghiep_HS item in ViewBag.DuyetHoSo)
+                                            {
+                                                <tr>
+                                                    <td>@item.ID_HSTuyenDung</td>
+                                                    <td>@item.DoanhNghiep.TenDoanhNghiep</td>
+                                                    <td>@item.TieuDeHoSo</td>
+                                                    <td>@item.SoLuotXem</td>
+                                                    <td class="center">
+                                                        <a class="btn btn-danger" style="color: #fff; background-color: #31b0d5; border-color: #31b0d5;" href="/TD/TD_Detail/@item.ID_HSTuyenDung" target="_blank"><span class="glyphicon glyphicon-edit"></span></a>
+                                                        <a class="btn btn-danger btnduyet" style="color: #fff; background-color: #d9534f; border-color: #d43f3a;" href="/Account/DuyetHoSo/@item.ID_HSTuyenDung"><span class="glyphicon glyphicon-check"></span></a>
+                                                        <a class="btn btn-warning" onclick="return btnXoaHSTD()" style="color: #fff; background-color: #f0ad4e; border-color: #eea236;" href="/Account/HuyDuyetHoSo/@item.ID_HSTuyenDung"><span class="glyphicon glyphicon-trash"></span></a>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="panel-footer">
+                                <ul class="pager" id="pager3">
+                                    <li><a><span class="glyphicon glyphicon-chevron-left"></span></a></li>
+                                    <li><a><span class="glyphicon glyphicon-chevron-right"></span></a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="tndn" class="tab-pane fade in active" style="display:none">
+    <div class="about-container" style="background:none">
+        <div id="wrapper">
+            <div id="page-wrapper">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                Danh Sách Tin Nhắn _ Chờ Được Duyệt
+                            </div>
+                            <div id="listduyettinnhan" class="panel-body">
+                                @*<div class="row">
+                                        <div class="col-lg-6">
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <a href="/Account/DuyetTatCaTNDN" class="btn btn-info pull-right" style="background: #31b0d5; color: white">
+                                                <span class="fa fa-check-circle"></span>&nbsp;Duyệt Tất Cả
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <a href="/Account/HuyDuyetTatCaTNDN" class="btn btn-success pull-right" style="background: #eea236; color: white">
+                                                <span class="fa fa-remove"></span>&nbsp;Hủy Duyệt Tất Cả
+                                            </a>
+                                        </div>
+                                    </div>*@
+                                <table class="table table-striped table-bordered table-hover ">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Nội dung tin nhắn</th>
+                                            <th>Tên doanh nghiệp nhận</th>
+                                            <th>Ngày gửi</th>
+                                            <th>Xóa</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @if (ViewBag.DuyetTinNhan != null)
+                                        {
+                                            foreach (DVVLBD.Models.dvvlBD.GuiHSChoDN item in ViewBag.DuyetTinNhan)
+                                            {
+                                                <tr>
+                                                    <td>@item.ID_GuiHSChoDN</td>
+                                                    <td>@item.TinNhanNTV</td>
+                                                    <td>@item.DoanhNghiep.TenDoanhNghiep</td>
+                                                    <td>@Html.FormatValue(item.NgayTao, "{0:dd/MM/yyyy}")</td>
+                                                    <td class="center">
+                                                        @*<a class="btn btn-danger btnduyet" style="color: #fff; background-color: #d9534f; border-color: #d43f3a;" href="/Account/DuyetTinNhan/@item.ID_GuiHSChoDN"><span class="glyphicon glyphicon-check"></span></a>*@
+                                                        <a class="btn btn-warning" onclick="return btnXoaTNDN()" style="color: #fff; background-color: #f0ad4e; border-color: #eea236;" href="/Account/HuyDuyetTinNhan/@item.ID_GuiHSChoDN"><span class="glyphicon glyphicon-trash"></span></a>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="panel-footer">
+                                <ul class="pager" id="pager4">
+                                    <li><a><span class="glyphicon glyphicon-chevron-left"></span></a></li>
+                                    <li><a><span class="glyphicon glyphicon-chevron-right"></span></a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden" id="demdn" name="demdn" value="@Session["demdn"]" />
+<input type="hidden" id="demduyet" name="demduyet" value="@Session["demduyet"]" />
+<input type="hidden" id="demtndn" name="demtndn" value="@Session["demtndn"]" />
+<input type="hidden" id="duyet" name="duyet" value="@Session["duyet"]" />
+@if (TempData["th"] == "tb")
+{
+    <script>
+        alertify.success('Duyệt Thành Công');
+    </script>
+}
+else if (TempData["th"] == "bt")
+{
+    <script>
+        alertify.error('Lỗi! Xin thử lại');
+    </script>
+}
+<script type="text/javascript">
+    function btnXoaTNDN() {
+        if (confirm("Bạn có thật sự muốn xóa?"))
+            return true;
+        else
+            return false;
+    }
+</script>
+<script type="text/javascript">
+    function btnXoaHSTD() {
+        if (confirm("Bạn có thật sự muốn xóa?"))
+            return true;
+        else
+            return false;
+    }
+</script>
+<script>
+    ///////////quản lý doanh nghiệp
+    $(function () {
+        var pageNo = 0;
+        var pageSize = 5;
+        var ii = $('#demdn').val();
+
+        $("#pager2 a:eq(0)").click(function () {
+            if (pageNo > 0)
+                pageNo = pageNo - 1;
+            else
+                pageNo = 0;
+            $.ajax({
+                url: "/Account/QuanLyDoanhNghiepSkip",
+                data: { pageNo: pageNo, pageSize: pageSize },
+                success: function (respone) {
+                    $("#list").html('');
+                    $("#list").html(respone);
+                }
+            });
+        });
+
+        $("#pager2 a:eq(1)").click(function () {
+            if (pageNo < ii)
+                pageNo++;
+            $.ajax({
+                url: "/Account/QuanLyDoanhNghiepSkip",
+                data: { pageNo: pageNo, pageSize: pageSize },
+                success: function (respone) {
+                    $("#list").html('');
+                    $("#list").html(respone);
+                }
+            });
+        });
+    });
+    ///////quản lý duyệt doanh nghiệp
+    $(function () {
+        var pageNo = 0;
+        var pageSize = 5;
+        var ii = $('#demduyet').val();
+
+        $("#pager3 a:eq(0)").click(function () {
+            if (pageNo > 0)
+                pageNo = pageNo - 1;
+            else
+                pageNo = 0;
+            $.ajax({
+                url: "/Account/QuanLyDuyetDoanhNghiepSkip",
+                data: { pageNo: pageNo, pageSize: pageSize },
+                success: function (respone) {
+                    $("#listduyet").html('');
+                    $("#listduyet").html(respone);
+                }
+            });
+        });
+
+        $("#pager3 a:eq(1)").click(function () {
+            if (pageNo < ii)
+                pageNo++;
+            $.ajax({
+                url: "/Account/QuanLyDuyetDoanhNghiepSkip",
+                data: { pageNo: pageNo, pageSize: pageSize },
+                success: function (respone) {
+                    $("#listduyet").html('');
+                    $("#listduyet").html(respone);
+                }
+            });
+        });
+    });
+    //////////quản lý duyệt tin nhắn doanh nghiệp
+    $(function () {
+        var pageNo = 0;
+        var pageSize = 5;
+        var ii = $('#demtndn').val();
+
+        $("#pager4 a:eq(0)").click(function () {
+            if (pageNo > 0)
+                pageNo = pageNo - 1;
+            else
+                pageNo = 0;
+            $.ajax({
+                url: "/Account/QuanLyDuyetTNDNSkip",
+                data: { pageNo: pageNo, pageSize: pageSize },
+                success: function (respone) {
+                    $("#listduyettinnhan").html('');
+                    $("#listduyettinnhan").html(respone);
+                }
+            });
+        });
+
+        $("#pager4 a:eq(1)").click(function () {
+            if (pageNo < ii)
+                pageNo++;
+            $.ajax({
+                url: "/Account/QuanLyDuyetTNDNSkip",
+                data: { pageNo: pageNo, pageSize: pageSize },
+                success: function (respone) {
+                    $("#listduyettinnhan").html('');
+                    $("#listduyettinnhan").html(respone);
+                }
+            });
+        });
+    });
+
+    function loadQuanLyHSDN() {
+        if ($("#qlhs").css('display') == 'none') {
+            $("#qlhs").addClass('d-block');
+            $("#qlhs").removeClass('d-none');
+            $("#dhs").addClass('d-none');
+            $("#dhs").removeClass('d-block');
+            $("#tndn").addClass('d-none');
+            $("#tndn").removeClass('d-block');
+        }
+        else {
+            $("#dhs").removeClass('d-block');
+            $("#dhs").addClass('d-none');
+            $("#tndn").removeClass('d-block');
+            $("#tndn").addClass('d-none');
+        }
+    };
+    function loadDuyetHSDN() {
+        if ($("#dhs").css('display') == 'none') {
+            $("#dhs").addClass('d-block');
+            $("#dhs").removeClass('d-none');
+            $("#qlhs").addClass('d-none');
+            $("#qlhs").removeClass('d-block');
+            $("#tndn").addClass('d-none');
+            $("#tndn").removeClass('d-block');
+        }
+        else {
+            $("#qlhs").removeClass('d-block');
+            $("#qlhs").addClass('d-none');
+            $("#tndn").removeClass('d-block');
+            $("#tndn").addClass('d-none');
+        }
+    };
+    function loadDuyetTNDN() {
+        if ($("#tndn").css('display') == 'none') {
+            $("#tndn").addClass('d-block');
+            $("#tndn").removeClass('d-none');
+            $("#qlhs").addClass('d-none');
+            $("#qlhs").removeClass('d-block');
+            $("#dhs").addClass('d-none');
+            $("#dhs").removeClass('d-block');
+        }
+        else {
+            $("#qlhs").removeClass('d-block');
+            $("#qlhs").addClass('d-none');
+            $("#dhs").removeClass('d-block');
+            $("#dhs").addClass('d-none');
+        }
+    };
+    QuanLyHSDN = function () {
+        loadQuanLyHSDN();
+    };
+    DuyetHSDN = function () {
+        loadDuyetHSDN();
+    };
+    DuyetTNDN = function () {
+
+        loadDuyetTNDN();
+    }
+    var header = document.getElementById("btnh4");
+    var btns = header.getElementsByClassName("btnactive");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function () {
+            var current = document.getElementsByClassName("thaydoimaunen");
+            current[0].className = current[0].className.replace(" thaydoimaunen", "");
+            this.className += " thaydoimaunen";
+        });
+    }
+
+    var duyet = $('#duyet').val();
+
+    if (duyet == "ss") {
+        loadQuanLyHSDN();
+        $("#ssss").removeClass('thaydoimaunen');
+        $("#sss").removeClass('thaydoimaunen');
+        $("#ss").addClass('thaydoimaunen');
+    }
+    else if (duyet == "ok") {
+        loadDuyetHSDN();
+        $("#sss").addClass('thaydoimaunen');
+        $("#ss").removeClass('thaydoimaunen');
+        $("#ssss").removeClass('thaydoimaunen');
+    }
+    else if (duyet == "tn") {
+        loadDuyetTNDN();
+        $("#ssss").addClass('thaydoimaunen');
+        $("#ss").removeClass('thaydoimaunen');
+        $("#sss").removeClass('thaydoimaunen');
+    }
+</script>

@@ -1,0 +1,67 @@
+﻿@model DVVLBD.Models.RegisterModel
+@{
+    ViewBag.Title = "Đăng ký";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/css/Login_Style.css" rel="stylesheet" />
+<link href="~/Content/fontawesome-free-5.9.0-web/css/all.css" rel="stylesheet" />
+
+<link href="~/Content/css/Login_Style.css" rel="stylesheet" />
+<div class="container" style="margin-top: 20px; border-radius: 4px 4px;">
+
+    <div class="omb_login">
+        <h3 class="omb_authTitle " style="font-family:monospace"><a style="color:#9f4d4d">Vui lòng nhập thông tin đăng ký</a></h3>
+
+        @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <div class="row omb_row-sm-offset-3" style="padding-bottom:20px">
+                <div class="col-xs-12 col-sm-6">
+                    <form class="omb_loginForm" action="" autocomplete="off" method="post">
+
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                            <input type="text" class="form-control" name="Username" placeholder="Tên đăng nhập" required>
+                        </div>
+                        <span class="help-block"></span>
+
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                            <input type="password" class="form-control" name="password" placeholder="Mật khẩu" required>
+                        </div>
+                        <span class="help-block"></span>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-repeat"></i></span>
+                            <input type="password" class="form-control" name="password2" placeholder="Lặp lại mật khẩu" required>
+                        </div>
+                        <span class="help-block"></span>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                            <input type="email" class="form-control" name="Email" placeholder="Email" required>
+                        </div>
+                        <span class="help-block"></span>
+                        <div class="input-group">
+                            <label style="font-family:monospace">Tài khoản của :&nbsp;</label>
+                            <label class="radio-inline">
+                                <input type="radio" name="optradio" value="ntv" checked> Người tìm việc
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="optradio" value="ntd"> Tuyển dụng
+                            </label>
+                        </div>
+                        <span class="help-block"></span>
+                        <div>
+                            <label style="font-family:monospace">Mã xác thực :&nbsp;</label>
+                            <img id="mycaptcha" src="/Account/GetCaptchaImage" title="Captcha" /><p style="font-weight:bold;color:red;">@ViewData["captcha"]</p>
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-thumbs-up"></i></span>
+                            <input type="text" class="form-control" name="captcha" placeholder="Nhập mã xác thực">
+                        </div>
+                        <span class="help-block" style="font-family:monospace">@Html.ValidationSummary(false, "", new { @class = "text-danger" })</span>
+                        <button class="btn-lg btn-success btn-block" type="submit"><i class="fa fa-user-plus"></i> Gửi thông tin đăng ký</button>
+                    </form>
+                </div>
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,62 @@
+﻿.tab_container {
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .input_tab, .tab-content {
+        clear: both;
+        padding-top: 10px;
+        display: none;
+    }
+
+    .label_tab {
+        font-weight:lighter;
+        font-family: monospace;
+        font-size: 16px;
+        display: block;
+        float: left;
+        padding: 15px;
+        padding-bottom:12px;
+        color: #4e4e4e;
+        cursor: pointer;
+        text-decoration: none;
+        text-align: center;
+        background: #f0f0f0;
+    }
+
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3 {
+    display: block;
+    padding: 10px; /*sưa*/
+    background: #FFD88E;
+    color: white;
+   /*border-bottom: 2px solid #f0f0f0;*/
+}
+
+
+    .tab_container .tab-content p,
+    .tab_container .tab-content h3 {
+        -webkit-animation: fadeInScale 0.7s ease-in-out;
+        -moz-animation: fadeInScale 0.7s ease-in-out;
+        animation: fadeInScale 0.7s ease-in-out;
+    }
+
+    .tab_container .tab-content h3 {
+        text-align: center;
+    }
+
+    .tab_container [id^="tab"]:checked + label {
+        background: #006fc7;  color: white;
+        /*box-shadow: inset 0 3px #0CE;*/
+    }
+
+        .tab_container [id^="tab"]:checked + .label_tab .fa {
+            color: white;
+        }
+
+    .label_tab .fa {
+        font-size: 1.3em;
+        margin: 0 0.4em 0 0;
+    }

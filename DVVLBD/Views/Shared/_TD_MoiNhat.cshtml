@@ -1,0 +1,166 @@
+﻿<style>
+    .header_T {
+        color: black;
+    }
+
+    .item-jobpost {
+    }
+
+    @@media screen and (max-width:1200px) {
+    }
+
+    @@media screen and (max-width:1200px) {
+    }
+</style>
+@helper Truncate(string input, int length)
+{
+    if (input != null)
+    {
+        if (input.Length <= length)
+        {
+            @input
+        }
+        else
+        {
+            @input.Substring(0, length)<text>...</text>
+        }
+    }
+
+}
+<div class="card">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jobpost-title-Nh">
+                <div class="row" style="margin-left:0">
+                    <div class="col-md-1 col-sm-1 col-xs-2">
+
+                    </div>
+                    <div class="col-md-3 col-xs-4">
+                        <p><i class="fa fa-bars"></i>  Tiêu đề / Tên Cty</p>
+                    </div>
+                    <div class="col-md-2 col-xs-3">
+                        <p><i class="fa fa-map-marker"></i> Khu vực</p>
+                    </div>
+                    <div class="col-md-2 col-xs-3">
+                        <p><i class="fa fa-briefcase"></i>  Kinh nghiệm</p>
+                    </div>
+                    <div class="col-md-2 col-xs-3">
+                        <p><i class="fa fa-briefcase"></i>  Mức lương</p>
+                    </div>
+                    <div class="col-md-2 col-xs-4 ngaydang">
+                        <p><i class="fa fa-calendar"></i> Cập nhật</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="row">
+        <div class="card-body col-md-12">
+            @foreach (DVVLBD.Models.dvvlBD.DoanhNghiep_HS th in Model)
+            {
+                var str = th.TieuDeHoSo;
+                <div class="item-jobpost">
+                    <div class="row" style="margin-left:0;margin-bottom:3px;">
+                        <div class="col-md-1 col-sm-1 col-xs-2" style="padding-top:10px;padding-right:0">
+
+                            <a class="Phu_header" href="/TD/TD_Detail/@th.ID_HSTuyenDung">
+                                @if (th.DoanhNghiep.LoGo != "")
+                                {
+                                    var logo = th.DoanhNghiep.LoGo;
+                                    <img src="~/Images/DN_Images/@logo" style="width: 40px; height: 40px" alt="" />
+                                }
+                                else
+                                {
+                                    <div class="box-img">
+                                        <img src="~/Images/DN_Images/iconlogo1.png" style="width: 40px; height: 40px; " />
+                                        <img src="~/Images/DN_Images/BTU.png" style="width: 40px; height: 40px" />
+                                    </div>
+                                }
+                            </a>
+                        </div>
+
+                        <div class="col-md-3 col-sm-4 col-xs-4">
+                            <h5 style="margin-bottom:5px">
+                                <a title="@th.TieuDeHoSo" class=" header_T h5_hover" style="font-size:15px;text-decoration:none;font-family: 'Open Sans', sans-serif,'Times New Roman', Times, serif" href="/TD/TD_Detail/@th.ID_HSTuyenDung">
+                                    @Truncate(th.TieuDeHoSo.ToUpper(), 26)
+                                </a>
+                            </h5>
+
+                            <p style="font-size: 13px; margin-bottom: 5px">
+                                <a title="@th.DoanhNghiep.TenDoanhNghiep" class=" header_T p_hover" style="text-decoration:none;" href="/TD/TD_Detail/@th.ID_HSTuyenDung">@Truncate(th.DoanhNghiep.TenDoanhNghiep.ToUpper(), 28)</a>
+                            </p>
+
+                        </div>
+                        <div class="col-md-2 col-sm-3 col-xs-3 jobpost-Nh mt10">
+                            @if (th.DoanhNghiep.ID_QuanHuyen > 0)
+                            {
+                                <span>@th.DoanhNghiep.DM_DiaChi.TenDiaChi</span><br />
+                            }
+                            else
+                            {
+                                <span>Không xác định</span><br />
+                            }
+
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-3 jobpost-Nh mt10">
+                            @if (th.YeuCauNamKinhNghiem != null)
+                            {
+                                if (th.YeuCauNamKinhNghiem > 0)
+                                {
+                                    <span>@th.YeuCauNamKinhNghiem năm</span><br />
+                                }
+                                else if (th.YeuCauNamKinhNghiem == 0)
+                                {
+                                    <span>Không yêu cầu</span><br />
+                                }
+                                else
+                                {
+                                    <span>Không có dữ liệu</span><br />
+                                }
+                            }
+                            else
+                            {<span>Không yêu cầu</span><br />}
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-3 jobpost-Nh mt10">
+                            @if (th.ID_MucLuong > 0)
+                            {
+                                <span>@th.DM_MucLuong.TenMucLuong</span><br />
+                            }
+                            else
+                            {
+                                <span>Không xác định</span><br />
+                            }
+                        </div>
+
+                        <div class="col-md-2 col-sm-4 col-xs-4 mt10 ngaydang">
+                            <span>@Html.FormatValue(th.NgayCapNhat, "{0:dd/MM/yyyy}")</span>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-12" style="text-align:right">
+            <a href="/TD/TD_Main" class="btn btn-info  text-uppercase " style=" margin-top: 25px; font-weight: bold; line-height: 30px; "><i class="fa fa-search"></i>&nbsp;Tra cứu hồ sơ tuyển dụng</a>
+        </div>
+    </div>
+
+</div>
+<script>
+    $(".item-jobpost").mouseenter(function () {
+        $(this).css("color", "#006fc7");
+        $(this).find(".h5_hover").css("color", "#006fc7");
+        $(this).find(".h6_hover").css("color", "#006fc7");
+        $(this).find(".p_hover").css("color", "#006fc7");
+    }).mouseleave(function () {
+        $(this).css("color", "black");
+        $(this).find(".h6_hover").css("color", "black");
+        $(this).find(".h5_hover").css("color", "black");
+        $(this).find(".p_hover").css("color", "black");
+    });
+</script>

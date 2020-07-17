@@ -1,0 +1,278 @@
+﻿<style>    
+    .d-block {
+        display: block !important;
+    }
+
+    .d-none {
+        display: none !important;
+    }
+
+    .thaydoimaunen {
+        background-color: #808080 !important;
+    }
+</style>
+<link href="~/Content/css/them.css" rel="stylesheet" />
+<div class="panel-heading">
+    <h4 class="panel-title" id="btnh4">
+        @if (Session["TinNhan"] == "NEW")
+        {
+            <a class="btn btn-danger btn-width btn-send-msg btnactive test thaydoimaunen" onclick="OnOffHSG();">Tin nhắn đã nhận</a>
+        }
+        else
+        {
+            <a class="btn btn-danger btn-width btn-send-msg btnactive thaydoimaunen" onclick="OnOffHSG();">Tin nhắn đã nhận</a>
+        }
+        <a class="btn btn-danger btn-width btn-send-msg btnactive" onclick="OnOffHSN();">Tin nhắn đã gửi</a>
+        <a class="btn btn-danger btn-width btn-send-msg btnactive" onclick="OnOffHSL();">Hồ sơ đã lưu</a>
+    </h4>
+</div>
+<div id="findHSG" class="tab-pane fade in active panel-collapse collapse" style="display:block">
+    <div class="about-container" style="background:none">
+        <div id="wrapper">
+            <div id="page-wrapper">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                        <thead>
+                                            <tr>
+                                                <th>Nội dung tin Nhắn</th>
+                                                <th>Tình trạng xem</th>
+                                                <th>Ngày tạo</th>
+                                                <th>Xem HS/Xóa</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @if (ViewBag.HSGuiChoDN != null)
+                                            {
+                                                foreach (DVVLBD.Models.dvvlBD.GuiHSChoDN item in ViewBag.HSGuiChoDN)
+                                                {
+                                                    <tr>
+                                                        <td>@item.TinNhanNTV</td>
+                                                        @if (@item.DaXem == 0)
+                                                        {
+                                                            <td class="test">Chưa xem</td>
+                                                        }
+                                                        else
+                                                        {
+                                                            <td>Đã xem</td>
+                                                        }
+                                                        <td>@Html.FormatValue(item.NgayTao, "{0:dd/MM/yyyy}")</td>
+                                                        <td class="center">
+                                                            <a class="btn btn-danger" style="color: #fff; background-color: #d9534f; border-color: #d43f3a;" href="/NTV/ThongTinChiTietNTV/@item.ID_UserNTV?ID_GuiHSChoDN=@item.ID_GuiHSChoDN"><span class="glyphicon glyphicon-edit"></span></a>
+                                                            <a class="btn btn-warning" onclick="return btnXoaTinNhanDen()" style="color: #fff; background-color: #f0ad4e; border-color: #eea236;" href="/Account/XoaTinNhanDenDN/@item.ID_GuiHSChoDN"><span class="glyphicon glyphicon-trash"></span></a>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="findHSN" class="tab-pane fade in active panel-collapse collapse" style="display:none">
+    <div class="about-container" style="background:none">
+        <div id="wrapper">
+            <div id="page-wrapper">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                        <thead>
+                                            <tr>
+                                                <th>Nội dung tin Nhắn</th>
+                                                <th>Tình trạng xem</th>
+                                                <th>Ngày tạo</th>
+                                                <th>Xem HS/Xóa</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @if (ViewBag.HSNhan != null)
+                                            {
+                                                foreach (DVVLBD.Models.dvvlBD.GuiHSChoNTV item in ViewBag.HSNhan)
+                                                {
+                                                    <tr>
+                                                        <td>@item.TinNhanDN</td>
+                                                        @if (@item.DaXem == 0)
+                                                        {
+                                                            <td class="test">Chưa xem</td>
+                                                        }
+                                                        else
+                                                        {
+                                                            <td>Đã xem</td>
+                                                        }
+                                                        <td>@Html.FormatValue(item.NgayTao, "{0:dd/MM/yyyy}")</td>
+                                                        <td class="center">
+                                                            <a class="btn btn-danger" style="color: #fff; background-color: #d9534f; border-color: #d43f3a;" href="/NTV/NTV_Detail/@item.ID_HSXinViec"><span class="glyphicon glyphicon-edit"></span></a>
+                                                            <a class="btn btn-warning" onclick="return btnXoaTinNhanDi()" style="color: #fff; background-color: #f0ad4e; border-color: #eea236;" href="/Account/XoaTinNhanDiDN/@item.ID_GuiHSChoNTV"><span class="glyphicon glyphicon-trash"></span></a>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="findHSL" class="tab-pane fade in active panel-collapse collapse" style="display:none">
+    <div class="about-container" style="background:none">
+        <div id="wrapper">
+            <div id="page-wrapper">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                        <thead>
+                                            <tr>
+                                                <th>Tiêu Đề</th>
+                                                <th>Mã số ứng viên</th>
+                                                <th>Ngày tạo</th>
+                                                <th>Xem/Xóa</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @if (ViewBag.HSDaLuu != null)
+                                            {
+                                                foreach (DVVLBD.Models.dvvlBD.HSNTV_Luu item in ViewBag.HSDaLuu)
+                                                {
+                                                    <tr>
+                                                        <td>@item.TenHoSo</td>
+                                                        <td>@item.ID_NTV</td>
+                                                        <td>@Html.FormatValue(item.NgayTao, "{0:dd/MM/yyyy}")</td>
+                                                        <td class="center">
+                                                            <a class="btn btn-danger" style="color: #fff; background-color: #d9534f; border-color: #d43f3a;" href="/NTV/NTV_Detail/@item.ID_HSXinViec"><span class="glyphicon glyphicon-edit"></span></a>
+                                                            <a class="btn btn-warning" onclick="return btnXoaHSLuu()" style="color: #fff; background-color: #f0ad4e; border-color: #eea236;" href="/Account/XoaHSLuuDN/@item.ID_HSNTVLuu"><span class="glyphicon glyphicon-trash"></span></a>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden" id="hhh" name="hhh" value="@Session["hhh"]" style="color:black" />
+<script type="text/javascript">
+    function btnXoaHSLuu() {
+        if (confirm("Bạn có thật sự muốn xóa hồ sơ đã lưu?"))
+            return true;
+        else
+            return false;
+    };
+    function btnXoaTinNhanDen() {
+        if (confirm("Bạn có thật sự muốn xóa tin nhắn đã nhận?"))
+            return true;
+        else
+            return false;
+    };
+    function btnXoaTinNhanDi() {
+        if (confirm("Bạn có thật sự muốn xóa tin nhắn đã gửi?"))
+            return true;
+        else
+            return false;
+    };
+
+    function loadpageHSG() {
+        if ($("#findHSG").css('display') == 'none') {
+            $("#findHSG").addClass('d-block');
+            $("#findHSG").removeClass('d-none');
+            $("#findHSN").addClass('d-none');
+            $("#findHSN").removeClass('d-block');
+            $("#findHSL").addClass('d-none');
+            $("#findHSL").removeClass('d-block');
+        }
+        else {
+            $("#findHSN").removeClass('d-block');
+            $("#findHSN").addClass('d-none');
+            $("#findHSL").removeClass('d-block');
+            $("#findHSL").addClass('d-none');
+        }
+    };
+    function loadpageHSN() {
+        if ($("#findHSN").css('display') == 'none') {
+            $("#findHSN").addClass('d-block');
+            $("#findHSN").removeClass('d-none');
+            $("#findHSG").addClass('d-none');
+            $("#findHSG").removeClass('d-block');
+            $("#findHSL").addClass('d-none');
+            $("#findHSL").removeClass('d-block');
+        }
+        else {
+            $("#findHSG").removeClass('d-block');
+            $("#findHSG").addClass('d-none');
+            $("#findHSL").removeClass('d-block');
+            $("#findHSL").addClass('d-none');
+        }
+    };
+    function loadpageHSL() {
+        if ($("#findHSL").css('display') == 'none') {
+            $("#findHSL").addClass('d-block');
+            $("#findHSL").removeClass('d-none');
+            $("#findHSN").addClass('d-none');
+            $("#findHSN").removeClass('d-block');
+            $("#findHSG").addClass('d-none');
+            $("#findHSG").removeClass('d-block');
+        }
+        else {
+            $("#findHSN").removeClass('d-block');
+            $("#findHSN").addClass('d-none');
+            $("#findHSG").removeClass('d-block');
+            $("#findHSG").addClass('d-none');
+        }
+    };
+    OnOffHSG = function () {
+        loadpageHSG();
+    };
+    OnOffHSN = function () {
+        loadpageHSN();
+    };
+    OnOffHSL = function () {
+        loadpageHSL();
+    };
+    var hhh = $('#hhh').val();
+    if (hhh == "sss") {
+        loadpageHSG();
+    }
+    else if (hhh == "hhh") {
+        loadpageHSL();
+    }
+    else if (hhh == "ttt") {
+        loadpageHSN();
+    };
+
+    var header = document.getElementById("btnh4");
+    var btns = header.getElementsByClassName("btnactive");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function () {
+            var current = document.getElementsByClassName("thaydoimaunen");
+            current[0].className = current[0].className.replace(" thaydoimaunen", "");
+            this.className += " thaydoimaunen";
+        });
+    }
+
+</script>

@@ -1,0 +1,16 @@
+﻿
+<link href="~/Content/css/them.css" rel="stylesheet" />
+<div class="ww">
+    @foreach (DVVLBD.Models.dvvlBD.NguoiTimViec ntv in ViewBag.NTV)
+    {
+        <h2>@ntv.HoTen</h2>
+        <div>
+            <p>Địa chỉ: @ntv.DiaChi</p>
+            <p>Ngày sinh: @Html.FormatValue(ntv.NgaySinh, "{0:dd/MM/yyyy}")</p>
+            <p>Số điện thoại: @ntv.DienThoai</p>
+            <p>Email: @ntv.Email</p>
+        </div>
+    }
+    <a href="/Account/ThayDoiThongTinTaiKhoanNTV" class="btnchangeacc"><span style="color: #78cdf8;">Thay đổi thông tin tài khoản</span></a>
+</div>
+

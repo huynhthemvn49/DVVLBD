@@ -1,0 +1,32 @@
+﻿<link href="~/Content/css/them.css" rel="stylesheet" />
+<div class="sidebar-nav " style="background:none;">
+    <div>
+        <div class="nav-side-menu">
+            <div class="brand">CHUYÊN MỤC</div>
+            <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+            <div class="menu-list">
+                <ul id="menu-content" class="menu-content collapse out">
+                    <li data-toggle="collapse" class="collapsed">
+                        <a href="#hstv" data-toggle="pill">Hồ Sơ Ứng Tuyển Của Bạn </a>
+                    </li>
+                    @if (Session["TinNhanNTV"] == "NEW")
+                    {
+                        <li data-toggle="collapse" class="collapsed">
+                            <a href="#qlvl" data-toggle="pill" class="test">Quản Lý Tuyển Dụng </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li data-toggle="collapse" class="collapsed">
+                            <a href="#qlvl" data-toggle="pill">Quản Lý Tuyển Dụng </a>
+                        </li>
+                    }
+
+                    <li data-toggle="collapse" class="collapsed">
+                        <a href="#taikhoan" data-toggle="pill">Thông tin tài khoản </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

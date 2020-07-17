@@ -1,0 +1,242 @@
+﻿@model DVVLBD.Models.dvvlBD.NguoiTimViec
+@{
+    ViewBag.Title = "Thay đổi thông tin Người tìm việc";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/css/Info_Style.css" rel="stylesheet" />
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="container text-center">
+                <h3 style="font-family: monospace; font-weight: lighter; color: #0094ff">Hoàn thành hồ sơ ứng viên</h3>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    @using (Html.BeginForm("ThayDoiThongTinTaiKhoanNTV", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <fieldset id="fom12" class="info_form">
+            <div class="container">
+                <div class="contentform">
+                    <div class="leftcontact">
+                        @Html.HiddenFor(th => th.ID_NTV)
+                        @Html.HiddenFor(th => th.ID_User)
+                        @Html.HiddenFor(th => th.NgayTao)
+                        <div class="form-group" style="margin-bottom:0px;">
+                            <p>Họ và tên <span>*</span></p>
+                            <span class="icon-case"><i class="fa fa-user"></i></span>
+                            @Html.TextBoxFor(th => th.HoTen, new { @class = "form-control", @required = "required", @style = " height: 43px" })
+                            <div class="validation"></div>
+                        </div>
+                        <div class="form-group" style="margin-bottom:0px;">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <p>Ngày sinh (cũ) </p>
+                                    <span class="icon-case"><i class="fa fa-history"></i></span>
+                                    @Html.TextBoxFor(th => th.NgaySinh, "{0:dd/MM/yyyy}", new { @class = "form-control", @readonly = "readonly", @style = "width: 160px; height: 43px" })
+                                </div>
+                                <div class="col-md-8">
+                                    <p>Ngày sinh (mới) </p>
+                                    <input type="date" name="NgaySinh1" id="year" style="height: 41px; width: 160px" />
+                                </div>
+                            </div> 
+                            <div class="validation"></div>
+                        </div>
+                        <div class="form-group">
+                            <p>Giới tính <span>*</span></p>
+                            <span class="icon-case"><i class="fa fa-venus-mars"></i></span>
+                            <select class="form-control" name="GioiTinh" style="width: 75%; height: 43px">
+                                @if (ViewBag.Gioitinh == 1)
+                                {
+                                    <option value="1" selected>Nam</option>
+                                    <option value="2">Nữ</option>
+                                }
+                                else
+                                {
+                                    <option value="1">Nam</option>
+                                    <option value="2" selected>Nữ</option>
+                                }
+                            </select>
+                            <div class="validation"></div>
+                        </div>
+                        <div class="form-group" style="margin-bottom:0px;">
+                            <p>Số điện thoại <span>*</span></p>
+                            <span class="icon-case"><i class="fa fa-phone"></i></span>
+                            @Html.TextBoxFor(th => th.DienThoai, new { @class = "form-control", @required = "required", @style = " height: 43px" })
+                            <div class="validation"></div>
+                        </div>
+                        <div class="form-group" style="margin-bottom:0px;">
+                            <p>CMND <span>*</span></p>
+                            <span class="icon-case"><i class="glyphicon glyphicon-credit-card"></i></span>
+                            @Html.TextBoxFor(th => th.CMND, new { @class = "form-control", @required = "required", @style = " height: 43px" })
+                            <div class="validation"></div>
+                        </div>
+
+                        <div>
+                            <h4>Hộ khẩu thường trú<span>*</span></h4>
+                            <div class="form-group">
+                                <p>Tỉnh/Thành phố trực thuộc trung ương</p>
+                                <span class="icon-case"><i class="fa fa-map-marker"></i></span>
+                                @Html.DropDownList("ID_TinhThanhPho", null, new { @class = "form-control", @style = "height: 43px" })
+                            </div>
+                            <div class="validation"></div>
+
+                            <div class="form-group">
+                                <p>Quận/Huyện/Thị xã/Thành phố trực thuộc tỉnh</p>
+                                <span class="icon-case"><i class="fa fa-map-marker"></i></span>
+                                @Html.DropDownList("ID_QuanHuyen", null, new { @class = "form-control", @style = "height: 43px" })
+                            </div>
+                            <div class="validation"></div>
+
+                            <div class="form-group">
+                                <p>Xã/Phường/Thị trấn</p>
+                                <span class="icon-case"><i class="fa fa-map-marker"></i></span>
+                                @Html.DropDownList("ID_PhuongXa", null, new { @class = "form-control", @style = "height: 43px" })
+                            </div>
+                            <div class="validation"></div>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom:0px;">
+                            <p>Địa chỉ cụ thể <span>*</span></p>
+                            <span class="icon-case"><i class="fa fa-home"></i></span>
+                            @Html.TextBoxFor(th => th.DiaChi, new { @class = "form-control", @required = "required", @style = " height: 43px" })
+                            <div class="validation"></div>
+                        </div>
+
+                    </div>
+
+                    <div class="rightcontact">
+                        <div class="form-group" style="margin-bottom:0px">
+                            <p>Hình ảnh (Để cty tuyển dụng chú ý đến bạn)<span>*</span></p>
+                            <span class="icon-case"><i class="fa fa-file-image-o"></i></span>
+                            <div class="image-upload">
+                                <input id="file-input" type="file" name="AnhDaiDien" />
+                                @Html.HiddenFor(th => th.AnhDaiDien)
+                            </div>
+                            <span class="help-block" style="font-family: monospace; float: left">@Html.ValidationSummary(false, "", new { @class = "text-danger" })</span>
+                            <div class="validation"></div>
+                        </div>
+                        <div class="form-group">
+                            <p>Tình trạng hôn nhân <span>*</span></p>
+                            <span class="icon-case"><i class="fa fa-user"></i></span>
+                            <select class="form-control" name="TinhTrangHonNhan" style="width: 75%; height: 43px">
+                                @if (ViewBag.Gioitinh == 1)
+                                {
+                                    <option value="1" selected>Độc thân</option>
+                                    <option value="2">Đã có gia đinh</option>
+                                }
+                                else
+                                {
+                                    <option value="1">Độc thân</option>
+                                    <option value="2" selected>Đã có gia đình</option>
+                                }
+                            </select>
+                            <div class="validation"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <p>Dân tộc<span>*</span></p>
+                            <span class="icon-case"><i class="fa fa-users"></i></span>
+                            @Html.DropDownList("ID_DanToc", null, new { @class = "form-control", @style = "height: 43px" })
+                            <div class="validation"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <p>Tôn giáo <span>*</span></p>
+                            <span class="icon-case"><i class="fa fa-certificate"></i></span>
+                            @Html.DropDownList("TonGiao", null, new { @class = "form-control", @style = "height: 43px" })
+                            <div class="validation"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <p>Trình độ học vấn <span>*</span></p>
+                            <span class="icon-case"><i class="fa fa-graduation-cap"></i></span>
+                            @Html.DropDownList("TrinhDoVanHoa", null, new { @class = "form-control", @style = "height: 43px" })
+                            <div class="validation"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <p>Trình độ chuyên môn kỹ thuật <span>*</span></p>
+                            <span class="icon-case"><i class="fa fa-graduation-cap"></i></span>
+                            @Html.DropDownList("TrinhdoChuyenMon", null, new { @class = "form-control", @style = "height: 43px" })
+                            <div class="validation"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <p>Trình độ ngoại ngữ <span>*</span></p>
+                            <span class="icon-case"><i class="fa fa-language"></i></span>
+                            @Html.DropDownList("TrinhDoNgoaiNgu", null, new { @class = "form-control", @style = "height: 43px" })
+                            <div class="validation"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <p>Trình độ tin học <span>*</span></p>
+                            <span class="icon-case"><i class="fa fa-laptop"></i></span>
+                            @Html.DropDownList("TrinhDoTinHoc", null, new { @class = "form-control", @style = "height: 43px" })
+                            <div class="validation"></div>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom:0px;">
+                            <p>Email <span>*</span></p>
+                            <span class="icon-case"><i class="fa fa-home"></i></span>
+                            @Html.TextBoxFor(th => th.Email, new { @class = "form-control", @required = "required", @style = " height: 43px" })
+                            <div class="validation"></div>
+                        </div>
+                    </div>
+                    <button type="submit" class="bouton-contact">Lưu thông tin hồ sơ</button>
+                </div>
+            </div>
+
+        </fieldset>
+    }
+</section>
+<script type="text/javascript">
+
+    $(function () {
+        $('#ID_TinhThanhPho').change(function () {
+            $('#ID_QuanHuyen').empty();
+            var QuanHuyen = $('#ID_TinhThanhPho').val();
+            $.ajax({
+                url: "/Account/HuyenThiXa",
+                data: { tinhthanhphoID: QuanHuyen },
+                success: function (response) {
+                    $(response).each(function (i, e) {
+                        $("#ID_QuanHuyen").append(
+                            $('<option/>')
+                            .attr('value', e.ID_DiaChi)
+                            .text(e.TenDiaChi)
+                        );
+                    });
+                },
+                error: function (ex) {
+                    alert('Lỗi load Quận/Huyện/Thị xã/Thành phố trực thuộc tỉnh: ' + ex);
+                }
+            });
+        });
+    });
+
+    $(function () {
+        $('#ID_QuanHuyen').change(function () {
+            $('#ID_PhuongXa').empty();
+            var huyenthixa = $('#ID_QuanHuyen').val();
+            $.ajax({
+                url: "/Account/HuyenThiXa",
+                data: { tinhthanhphoID: huyenthixa },
+                success: function (response) {
+                    $(response).each(function (i, e) {
+                        $("#ID_PhuongXa").append(
+                            $('<option/>')
+                            .attr('value', e.ID_DiaChi)
+                            .text(e.TenDiaChi)
+                        );
+                    });
+                },
+                error: function (ex) {
+                    alert('Lỗi load Xã/Phường/Thị trấn: ' + ex);
+                }
+            });
+        });
+    });
+</script>

@@ -1,0 +1,47 @@
+﻿.ww {
+    font-size: 20px;
+    text-align: center;
+    border: 1px solid white;
+    background-color: #607d8b !important;
+    color: white;
+}
+
+.btnchangeacc {
+    font-style: italic;
+}
+
+    .btnchangeacc:hover {
+        text-decoration-color: #78cdf8;
+    }
+@-webkit-keyframes my {
+ 0% { color: #ff0000; } 
+ 50% { color: #fff;  } 
+ 100% { color: #ff0000;  } 
+ }
+@-moz-keyframes my { 
+ 0% { color: #ff0000;  } 
+ 50% { color: #fff;  }
+ 100% { color: #ff0000;  } 
+ }
+ @-o-keyframes my { 
+ 0% { color: #ff0000; } 
+ 50% { color: #fff; } 
+ 100% { color: #ff0000;  } 
+ }
+ @keyframes my { 
+ 0% { color: #ff0000;  } 
+ 50% { color: #fff;  }
+ 100% { color: #ff0000;  } 
+ } 
+ .test {
+         font-size:14px;
+         font-weight:bold;
+ -webkit-animation: my 700ms infinite;
+ -moz-animation: my 700ms infinite; 
+ -o-animation: my 700ms infinite; 
+ animation: my 700ms infinite;
+}
+.thaydoimaunen {
+    background-color: #808080;
+}
+

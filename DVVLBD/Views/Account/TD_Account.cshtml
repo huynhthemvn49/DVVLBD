@@ -1,0 +1,288 @@
+﻿@model DVVLBD.Models.dvvlBD.DoanhNghiep
+@{
+    ViewBag.Title = "Hoàn thành hồ sơ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/css/Info_Style.css" rel="stylesheet" />
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="container text-center">
+                <h3 style="font-family: monospace; font-weight: lighter; color: #0094ff">Thông tin Doanh nghiệp</h3>
+                <span>(Bạn chỉ có 20p để hoàn thành hồ sơ, quá 20p bạn sẻ phải "Đăng Ký" lại)</span>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    @using (Html.BeginForm("TD_Account", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <fieldset id="fom12" class="info_form">
+            <div class="container">
+                <div class="leftcontact">
+
+                    <div class="form-group" style="margin-bottom:0px;">
+                        <p>Tên công ty/doanh nghiệp<span>*</span></p>
+                        <span class="icon-case"><i class="fa fa-building"></i></span>
+                        <input type="text" name="TenDoanhNghiep" id="name" required style="height: 42px" />
+                        <div class="validation"></div>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom:0px;">
+                        <p>Ngày thành lập </p>
+                        <span class="icon-case"><i class="fa fa-history"></i></span>
+                        <input type="date" name="NgayThanhLap" id="year" style="height: 42px" />
+                        <div class="validation"></div>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom:0px;">
+                        <p>Người đại diện </p>
+                        <span class="icon-case"><i class="glyphicon glyphicon-credit-card"></i></span>
+                        <input type="text" name="NguoiLienHe" id="Text4" required style="height: 42px" />
+                        <div class="validation"></div>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom:0px;">
+                        <p>Chức vụ </p>
+                        <span class="icon-case"><i class="fa fa-briefcase"></i></span>
+                        <input type="text" name="ChucVuNguoiLienHe" id="Text5" required style="height: 42px" />
+                        <div class="validation"></div>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom:0px;">
+                        <p>Điện thoại <span>*</span></p>
+                        <span class="icon-case"><i class="fa fa-phone"></i></span>
+                        <input type="text" name="DienThoai" id="phone" required style="height: 42px" />
+                        <div class="validation"></div>
+                    </div>
+                    <div class="form-group" style="margin-bottom:0px;">
+                        <p>Fax </p>
+                        <span class="icon-case"><i class="fa fa-fax"></i></span>
+                        <input type="text" name="Fax" id="Text2" style="height: 42px" />
+                        <div class="validation"></div>
+                    </div>
+                    <div class="form-group" style="margin-bottom:0px;">
+                        <p>E-mail <span>*</span></p>
+                        <span class="icon-case"><i class="fa fa-envelope"></i></span>
+                        <input type="email" name="Email" id="email" style="height: 42px" required />
+                        <div class="validation"></div>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom:0px;">
+                        <p>Website </p>
+                        <span class="icon-case"><i class="fa fa-globe"></i></span>
+                        <input type="text" name="Website" id="Text1" style="height: 42px" />
+                        <div class="validation"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <p>Giới thiệu về doanh nghiệp <span>*</span></p>
+                        <span class="icon-case"><i class="fa fa-comment"></i></span>
+                        <textarea name="GioiThieuChung" rows="14" required></textarea>
+                        <div class="validation"></div>
+                    </div>
+                </div>
+
+                <div class="rightcontact">
+                    <div>
+                        <h4>Địa chỉ trụ sở của công ty/doanh nghiệp<span>*</span></h4>
+                        <div class="form-group">
+                            <p>Tỉnh/Thành phố trực thuộc trung ương</p>
+                            <span class="icon-case"><i class="fa fa-map-marker"></i></span>
+                            @Html.DropDownList("ID_TinhThanhPho", null, new { @class = "form-control", @style = "height: 43px" })
+                        </div>
+                        <div class="validation"></div>
+
+                        <div class="form-group">
+                            <p>Quận/Huyện/Thị xã/Thành phố trực thuộc tỉnh</p>
+                            <span class="icon-case"><i class="fa fa-map-marker"></i></span>
+                            @Html.DropDownList("ID_QuanHuyen", new SelectList(string.Empty, "Value", "Text"), new { @class = "form-control", @style = "height: 43px" })
+                        </div>
+                        <div class="validation"></div>
+
+                        <div class="form-group">
+                            <p>Xã/Phường/Thị trấn</p>
+                            <span class="icon-case"><i class="fa fa-map-marker"></i></span>
+                            @Html.DropDownList("ID_PhuongXa", new SelectList(string.Empty, "Value", "Text"), new { @class = "form-control", @style = "height: 43px" })
+                        </div>
+                        <div class="validation"></div>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom:0px;">
+                        <p>Địa chỉ (Cụ thể số nhà, tên đường, phường xã ,...)<span>*</span></p>
+                        <span class="icon-case"><i class="fa fa-home"></i></span>
+                        <input type="text" name="DiaChi" id="diachi" required style="height: 42px" />
+                        <div class="validation"></div>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom:0px;">
+                        <p>Logo <span>*</span></p>
+                        <span class="icon-case"><i class="fa fa-file-image-o"></i></span>
+                        <div class="image-upload">
+                            <input id="file-input" name="LoGo" type="file" style="width: 75%; height: 42px" />
+                        </div>
+                        <span class="help-block" style="font-family: monospace; float: left">@Html.ValidationSummary(false, "", new { @class = "text-danger" })</span>
+                        <div class="validation"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <div>
+                            <p>Loại hình doanh nghiệp <span>*</span></p>
+                            <span class="icon-case"><i class="fa fa-building"></i></span>
+                            @Html.DropDownList("ID_LoaiHinhDoanhNghiep", null, new { @class = "form-control", @style = "width: 75%; height: 42px" })
+                        </div>
+                        <div class="validation"></div>
+                    </div>
+
+                    <div>
+                        <div class="form-group">
+                            <p>Ngành kinh doanh<span>*</span></p>
+                            <span class="icon-case"><i class="fa fa-building"></i></span>
+                            @Html.DropDownList("ID_NganhKinhDoanh", null, new { @class = "form-control", @style = "width: 75%; height: 42px" })
+                            <div class="validation"></div>
+                        </div>
+                        <div class="form-group">
+                            <p>Ngành kinh doanh<span>*</span></p>
+                            <span class="icon-case"><i class="fa fa-building"></i></span>
+                            @Html.DropDownList("ID_NgheKinhDoanh", new SelectList(string.Empty, "Value", "Text"), new { @class = "form-control", @style = "height: 43px" })
+                            <div class="validation"></div>
+                        </div>
+                    </div>                    
+                </div>
+                <button type="submit" class="bouton-contact">Lưu thông tin hồ sơ</button>
+            </div>
+        </fieldset>
+    }
+</section>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#ID_TinhThanhPho").val("9");
+    });
+    $(function () {
+        $('#ID_QuanHuyen').empty();
+        var quanhuyen = 9;
+        $.ajax({
+            url: "/Account/HuyenThiXa",
+            data: { tinhthanhphoID: quanhuyen },
+            success: function (response) {
+                $(response).each(function (i, e) {
+                    $("#ID_QuanHuyen").append(
+                        $('<option/>')
+                        .attr('value', e.ID_DiaChi)
+                        .text(e.TenDiaChi)
+                    );
+                });
+            },
+            error: function (ex) {
+                alert('Lỗi load Tỉnh/Thành phố trực thuộc trung ương: ' + ex);
+            }
+        });
+    });
+    $(function () {
+        $('#ID_TinhThanhPho').change(function () {
+            $('#ID_QuanHuyen').empty();
+            var QuanHuyen = $('#ID_TinhThanhPho').val();
+            $.ajax({
+                url: "/Account/HuyenThiXa",
+                data: { tinhthanhphoID: QuanHuyen },
+                success: function (response) {
+                    $(response).each(function (i, e) {
+                        $("#ID_QuanHuyen").append(
+                            $('<option/>')
+                            .attr('value', e.ID_DiaChi)
+                            .text(e.TenDiaChi)
+                        );
+                    });
+                },
+                error: function (ex) {
+                    alert('Lỗi load Quận/Huyện/Thị xã/Thành phố trực thuộc tỉnh: ' + ex);
+                }
+            });
+        });
+    });
+    $(function () {
+        $('#ID_PhuongXa').empty();
+        var phuongxa = 97;
+        $.ajax({
+            url: "/Account/HuyenThiXa",
+            data: { tinhthanhphoID: phuongxa },
+            success: function (response) {
+                $(response).each(function (i, e) {
+                    $("#ID_PhuongXa").append(
+                        $('<option/>')
+                        .attr('value', e.ID_DiaChi)
+                        .text(e.TenDiaChi)
+                    );
+                });
+            },
+            error: function (ex) {
+                alert('Lỗi load Tỉnh/Thành phố trực thuộc trung ương: ' + ex);
+            }
+        });
+    });
+    $(function () {
+        $('#ID_QuanHuyen').change(function () {
+            $('#ID_PhuongXa').empty();
+            var huyenthixa = $('#ID_QuanHuyen').val();
+            $.ajax({
+                url: "/Account/HuyenThiXa",
+                data: { tinhthanhphoID: huyenthixa },
+                success: function (response) {
+                    $(response).each(function (i, e) {
+                        $("#ID_PhuongXa").append(
+                            $('<option/>')
+                            .attr('value', e.ID_DiaChi)
+                            .text(e.TenDiaChi)
+                        );
+                    });
+                },
+                error: function (ex) {
+                    alert('Lỗi load Xã/Phường/Thị trấn: ' + ex);
+                }
+            });
+        });
+    });
+    $(function () {
+        $('#ID_NganhKinhDoanh').empty();
+        var nganhnghekd = 0;
+        $.ajax({
+            url: "/Account/NganhNgheKD",
+            data: { nganhID: nganhnghekd },
+            success: function (response) {
+                $(response).each(function (i, e) {
+                    $("#ID_NganhKinhDoanh").append(
+                        $('<option/>')
+                        .attr('value', e.ID_NganhKinhDoanh)
+                        .text(e.TenNganhKinhDoanh)
+                    );
+                });
+            },
+            error: function (ex) {
+                alert('Lỗi load Ngành kinh doanh: ' + ex);
+            }
+        });
+    });
+    $(function () {
+        $('#ID_NganhKinhDoanh').change(function () {
+            $('#ID_NgheKinhDoanh').empty();
+            var nganhnghekd = $('#ID_NganhKinhDoanh').val();
+            $.ajax({
+                url: "/Account/NganhNgheKD",
+                data: { nganhID: nganhnghekd },
+                success: function (response) {
+                    $(response).each(function (i, e) {
+                        $("#ID_NgheKinhDoanh").append(
+                            $('<option/>')
+                            .attr('value', e.ID_NganhKinhDoanh)
+                            .text(e.TenNganhKinhDoanh)
+                        );
+                    });
+                },
+                error: function (ex) {
+                    alert('Lỗi load Nghề kinh doanh: ' + ex);
+                }
+            });
+        });
+    });
+</script>

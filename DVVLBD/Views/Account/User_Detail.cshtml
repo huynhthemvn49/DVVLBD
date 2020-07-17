@@ -1,0 +1,52 @@
+﻿@model DVVLBD.Models.dvvlBD.User
+@{
+    ViewBag.Title = "Chi tiết User";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            <span class="glyphicon glyphicon-file"></span>
+            Thông Tin Tài Khoản
+        </h3>
+    </div>
+    <div class="panel-body">
+        @using (Html.BeginForm("Account", "User_Detail", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label style="font-family:monospace">User Id</label>
+                    @Html.TextBoxFor(th => th.ID_User, new { @class = "form-control", @readonly = true })
+                </div>
+                <div class="form-group col-sm-6">
+                    <label style="font-family:monospace">Tên Đăng Nhập</label>
+                    @Html.TextBoxFor(th => th.UserName, new { @class = "form-control", @readonly = true })
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label style="font-family:monospace">Mật Khẩu</label>
+                    @Html.TextBoxFor(th => th.PassWord, new { @class = "form-control", @readonly = true })
+                </div>
+                <div class="form-group col-sm-6">
+                    <label style="font-family:monospace">Email</label>
+                    @Html.TextBoxFor(th => th.Email, new { @class = "form-control", @readonly = true })
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label style="font-family:monospace">Ngày Tạo</label>
+                    @Html.TextBoxFor(th => th.NgayTao, "{0:dd/MM/yyyy}", new { @class = "form-control", @readonly = true })
+                </div>
+                <div class="form-group col-sm-6">
+                    <label style="font-family:monospace">Tên hiển thị</label>
+                    @Html.TextBoxFor(th => th.TenHienThi, new { @class = "form-control", @readonly = true })
+                </div>
+            </div>
+        }
+    </div>
+    
+</div>

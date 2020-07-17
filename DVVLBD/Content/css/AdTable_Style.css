@@ -1,0 +1,21 @@
+﻿.paginate_button {
+    margin-left: 0;
+    
+}
+.paginate_button:hover,paginate_button:focus {
+    color: #999;
+    background-color: #fff;
+    border-color: #ddd;
+    text-decoration:none
+}
+.paginate_button {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #428bca;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}

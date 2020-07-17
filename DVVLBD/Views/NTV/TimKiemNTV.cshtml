@@ -1,0 +1,115 @@
+﻿@helper Truncate(string input, int length)
+{
+    if (input != null)
+    {
+        if (input.Length <= length)
+        {
+            @input
+        }
+        else
+        {
+            @input.Substring(0, length)<text>...</text>
+        }
+    }
+}
+<style>
+    .d-block {
+        display: block !important;
+    }
+
+    .d-none {
+        display: none !important;
+    }
+</style>
+
+<link href="~/Content/css/FindControl_Style.css" rel="stylesheet" />
+<section>
+    <div class="container">
+        <div class="row">
+            @using (Html.BeginForm("DSNTVTheoTuKhoa", "NTV", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <p>***Hướng dẫn: <span style="color:blue"><i>Click nút "Tìm Kiếm" để lấy "Key"</i></span></p>
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <div class="input-group input-group-lg">
+                            <div class="input-group-addon">
+                                <i class="fa fa-tag"></i>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Key:" name="ChuoiTimKiemNTV">
+                        </div>
+                    </div>
+                    <p><u>Key:</u> <a style="color:red">@Session["ChuoiTimKiemNTV"]</a></p>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <button class="btn-primary btn-block btn-lg">Tìm Kiếm</button>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="row">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <label class="label label-success">Tìm Kiếm theo : </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a class="btn btn-danger btn-width btn-send-msg btnnn" onclick="OnOffNN();">Ngành Nghề</a>
+                            <a class="btn btn-danger btn-width btn-send-msg btnkv" onclick="OnOffKV();">Khu Vực</a>
+                        </h4>
+                    </div>
+                    <div id="findnn" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <div class="row">
+                                @foreach (DVVLBD.Models.dvvlBD.DM_NganhDaoTao th in ViewBag.NganhNghe)
+                                {
+                                    <div class="col-sm-3">
+                                        <a title="@th.TenNganhDaoTao" style="color:black" href="/NTV/DSNTVTheoNganhNghe/@th.ID_NganhDaoTao"><i class="glyphicon glyphicon-chevron-right"></i>@Truncate(th.TenNganhDaoTao, 26)</a>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div id="findkv" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <div class="row">
+                                @foreach (DVVLBD.Models.dvvlBD.DM_DiaChi th in ViewBag.KhuVuc)
+                                {
+                                    <div class="col-sm-3">
+                                        <a style="color:black" href="/NTV/DSNTVTheoKhuVuc/@th.ID_DiaChi"><i class="glyphicon glyphicon-chevron-right"></i> @th.TenDiaChi</a>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    OnOffNN = function () {
+        if ($("#findnn").css('display') == 'none') {
+            $("#findnn").addClass('d-block');
+            $("#findnn").removeClass('d-none');
+            $("#findkv").addClass('d-none');
+            $("#findkv").removeClass('d-block');
+        }
+        else {
+            $("#findnn").removeClass('d-block');
+            $("#findnn").addClass('d-none');
+        }
+    };
+    OnOffKV = function () {
+        if ($("#findkv").css('display') == 'none') {
+            $("#findnn").addClass('d-none');
+            $("#findnn").removeClass('d-block');
+            $("#findkv").addClass('d-block');
+            $("#findkv").removeClass('d-none');
+        }
+        else {
+            $("#findkv").removeClass('d-block');
+            $("#findkv").addClass('d-none');
+        }
+    }
+</script>

@@ -1,0 +1,124 @@
+﻿
+<link href="~/Content/css/Tab_Style.css" rel="stylesheet" />
+<link href="~/Content/css/TD_LD_Style.css" rel="stylesheet" />
+<div class="gioithieu">
+    <div class="col-lg-12 col-md-12 col-sm-12" style="background:#FFFFE0 !important;">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 about-box">
+                <label class="label label-info">Kết quả: @Session["SoLuongKQ"]</label>
+                <div class="tab_container" style="margin-top:5px">
+                    <input id="tab2" type="radio" name="tabs" checked class="input_tab">
+                    <label for="tab2" class="label_tab" style="height:50px"><i class="fa fa-briefcase"></i><span>Tuyển dụng</span></label>
+                    <section id="content2" class="tab-content">
+                        <div class="card">
+                            <div class="row">
+                                <div class="card-body col-md-12" id="result">
+                                </div>
+                            </div>
+                            @if (Session["DanhSach"] == "KhuVuc")
+                            {
+                                <div class="col-sm-4 col-sm-offset-4 col-xs-6 col-xs-offset-3">
+                                    <button id="btnLoad" name="btnLoadMoreLo" onclick="loadpageLocation()" class="btn btn-primary btn-block m-t-20" style="line-height:30px;font-family:monospace"><img id="loading" src="~/Images/loading.gif" />Xem thêm</button>
+                                </div>
+                            }
+                            else if (Session["DanhSach"] == "NganhNghe")
+                            {
+                                <div class="col-sm-4 col-sm-offset-4 col-xs-6 col-xs-offset-3">
+                                    <button id="btnLoad" name="btnLoadMoreJob" onclick="loadpageJob()" class="btn btn-primary btn-block m-t-20" style="line-height:30px;font-family:monospace"><img id="loading" src="~/Images/loading.gif" />Xem thêm</button>
+                                </div>
+                            }
+                            else if (Session["DanhSach"] == "TuKhoa")
+                            {
+                                <div class="col-sm-4 col-sm-offset-4 col-xs-6 col-xs-offset-3">
+                                    <button id="btnLoad" name="btnLoadMoreCus" onclick="loadpageCustom()" class="btn btn-primary btn-block m-t-20" style="line-height:30px;font-family:monospace"><img id="loading" src="~/Images/loading.gif" />Xem thêm</button>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="col-sm-4 col-sm-offset-4 col-xs-6 col-xs-offset-3">
+                                    <button id="btnLoad" name="rrrrr" onclick="loadpage()" class="btn btn-primary btn-block m-t-20" style="line-height:30px;font-family:monospace">
+                                        <img id="loading" src="~/Images/loading.gif" />Xem thêm
+                                    </button>
+                                </div>
+                            }
+                        </div>
+                        <input type="hidden" id="DanhSach" name="DanhSach" value="@Session["DanhSach"]" style="color:black" />
+                        <input type="hidden" id="KhuVucID" name="KhuVucID" value="@Session["KhuVucID"]" style="color:black" />
+                        <input type="hidden" id="NganhNgheID" name="NganhNgheID" value="@Session["NganhNgheID"]" style="color:black" />
+                        <input type="hidden" id="ChuoiTimKiem" name="ChuoiTimKiem" value="@Session["ChuoiTimKiem"]" style="color:black" />
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script>
+    var no;
+    var pageNo = 0;
+    var pageSize = 5;
+    var DanhSach = $('#DanhSach').val();
+    var KhuVucID = $('#KhuVucID').val();
+    var NganhNgheID = $('#NganhNgheID').val();
+    var ChuoiTimKiem = $('#ChuoiTimKiem').val();
+    if (DanhSach == "KhuVuc") {
+        loadpageLocation();
+    }
+    else if (DanhSach == "NganhNghe") {
+        loadpageJob();
+    }
+    else if (DanhSach == "TuKhoa") {
+        loadpageCustom();
+    }
+    else {
+        loadpage();
+    }
+    function loadpage() {
+        $("#loading").show();
+        $.ajax({
+            url: "/TD/TD_Default",
+            data: { pageNo: pageNo, pageSize: pageSize },
+            success: function (response) {
+                $("#result").append(response);
+                $("#loading").hide();
+                pageNo++;
+            }
+        });
+    }
+    function loadpageLocation() {
+        $("#loading").show();
+        $.ajax({
+            url: "/TD/KQTDTheoKhuVuc",
+            data: { Id: KhuVucID, pageNo: pageNo, pageSize: pageSize },
+            success: function (response) {
+                $("#result").append(response);
+                $("#loading").hide();
+                pageNo++;
+            }
+        });
+    }
+    function loadpageCustom() {
+        $("#loading").show();
+        $.ajax({
+            url: "/TD/KQTDTheoTuKhoa",
+            data: { ChuoiTimKiem: ChuoiTimKiem, pageNo: pageNo, pageSize: pageSize },
+            success: function (response) {
+                $("#result").append(response);
+                $("#loading").hide();
+                pageNo++;
+            }
+        });
+    }
+    function loadpageJob() {
+        $("#loading").show();
+        $.ajax({
+            url: "/TD/KQTDTheoNganhNghe",
+            data: { Id: NganhNgheID, pageNo: pageNo, pageSize: pageSize },
+            success: function (response) {
+                $("#result").append(response);
+                $("#loading").hide();
+                pageNo++;
+            }
+        });
+    }
+</script>

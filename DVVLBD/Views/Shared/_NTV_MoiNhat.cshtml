@@ -1,0 +1,221 @@
+﻿<style>
+    .header_T {
+        color: black;
+        font-family: 'Times New Roman';
+    }
+
+    .item-jobpost {
+        /*transition: .5s ease;*/
+        font-family: 'Times New Roman';
+    }
+
+    .btn-fresh {
+        color: #fff;
+        background-color: #51bf87;
+        border-bottom: 2px solid #41996c;
+    }
+
+        .btn-fresh:hover, .btn-sky.active:focus, .btn-fresh:focus, .open > .dropdown-toggle.btn-fresh {
+            color: #fff;
+            background-color: #66c796;
+            border-bottom: 2px solid #529f78;
+            outline: none;
+        }
+
+
+        .btn-fresh:active, .btn-fresh.active {
+            color: #fff;
+            background-color: #47a877;
+            border-top: 2px solid #39865f;
+            outline: none;
+            outline-offset: none;
+            margin-top: 2px;
+        }
+
+    .btn:focus,
+    .btn:active:focus,
+    .btn.active:focus {
+        outline: none;
+        outline-offset: 0px;
+    }
+
+    a-fresh {
+        color: #fff;
+    }
+
+        a-fresh:hover {
+            text-decoration: none;
+            color: #fff;
+        }
+
+    @@media screen and (max-width:576px) {
+        /*.item-jobpost .jobpost-apply-btn img {
+            width: 80px;
+        }*/
+        /*.jobpost-location {
+            display: none;
+        }*/
+    }
+
+
+    .mt10 {
+        margin-top: 10px;
+    }
+
+    .fl {
+        float: left;
+    }
+
+    .item-jobpost {
+        position: relative;
+    }
+
+    .jobpost-title-Nh p {
+        font-size: 13px;
+        color: #22924c;
+        font-weight: 600;
+    }
+
+    .jobpost-title-Nh {
+        border-bottom: 1px dashed #ccc;
+    }
+
+    .tdcmkt-Nh {
+        background-color: #FFD88E !important;
+        color: unset;
+        font-size: 14px;
+        font-weight: normal;
+        padding: 0;
+    }
+
+    .box-img {
+        width: 40px;
+        padding-right: 0;
+        height: 40px;
+        box-shadow: 1px 1px 2px 0px #a98f8f;
+    }
+</style>
+@helper Truncate(string input, int length)
+{
+    if (input != null)
+    {
+        if (input.Length <= length)
+        {
+            @input
+        }
+        else
+        {
+            @input.Substring(0, length)<text>...</text>
+        }
+    }
+}
+<div class="card">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jobpost-title-Nh">
+                <div class="row" style="margin-left:0">
+                    <div class="col-md-1 col-sm-1 col-xs-2">
+
+                    </div>
+                    <div class="col-md-3 col-xs-3">
+                        <p><i class="fa fa-bars"></i>  Tiêu đề / Tên NTV</p>
+                    </div>
+
+                    <div class="col-md-3 col-xs-3">
+                        <p><i class="fa fa-map-marker"></i> Khu vực / Kinh nghiệm</p>
+                    </div>
+                    <div class="col-md-2 col-xs-2">
+                        <p><i class="fa fa-folder-open"></i> Ngành / Trình độ </p>
+                    </div>
+                    <div class="col-md-3 col-xs-2 ngaydang">
+                        <p><i class="fa fa-calendar"></i> Giới tính / Ngày sinh / Ngày đăng</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div>
+        <div class="card-body col-md-12" style="padding-left:0px">
+            @foreach (DVVLBD.Models.dvvlBD.NguoiTimViec_HS th in Model)
+            {
+                var str = th.NguoiTimViec.HoTen;
+                <div class="item-jobpost">
+
+                    <div class="row" style="margin-left:0; padding-left:0">
+                        <div class="col-md-1 jobpost-apply-btn" style="padding-right:0">
+                            <div class="box-img">
+                                <a href="/NTV/NTV_Detail/@th.ID_HSXinViec">
+                                @if (th.NguoiTimViec.AnhDaiDien != "")
+                                {
+                                    var anh = th.NguoiTimViec.AnhDaiDien;
+                                    <img src="~/Images/NTV_Images/@anh" style="width: 40px;height:40px" alt="" />
+                                }
+                                else if (th.NguoiTimViec.AnhDaiDien == "" && th.NguoiTimViec.GioiTinh == 1)
+                                {
+                                    <img src="~/Images/NTV_Images/AvataNam.jpg" style="width: 40px;height:40px" alt="" />
+                                }
+                                else
+                                {
+                                    <img src="~/Images/NTV_Images/AvataNu.jpg" style="width: 40px; height: 40px; " alt="" />
+                                }
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <h5 class="item_hover" style="margin-bottom:5px">
+                                <a title="@th.TenHSXinViec" class="header_T item_hover" style="text-decoration:none;font-size:14px;font-family: 'Open Sans', sans-serif,'Times New Roman', Times, serif" href="/NTV/NTV_Detail/@th.ID_HSXinViec">
+                                    @Truncate(th.TenHSXinViec.ToUpper(), 26)
+                                </a>
+                            </h5>
+                            <ul class="list-inline" style="margin-bottom:5px">
+                                <li>
+                                    <a class="header_T item_hover" style="text-decoration:none;font-size:13px" href="/NTV/NTV_Detail/@th.ID_HSXinViec">@th.NguoiTimViec.HoTen.ToUpper()</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3 jobpost-location item_hover" style="padding-left:20px">
+                            <span>&nbsp;@th.NguoiTimViec.DM_DiaChi.TenDiaChi / </span>
+                            <span>&nbsp;@th.KinhNghiem năm</span>
+                        </div>
+                        <div class="col-md-2 mt10" style="padding-left:25px">
+                            <span>@th.NguoiTimViec.DM_NganhDaoTao.TenNganhDaoTao / </span>
+                            <label class="label lighten-1 tdcmkt-Nh">@th.NguoiTimViec.DM_TrinhDo.TenTrinhDo</label>
+                        </div>
+                        <div class="col-md-3 mt10 ngaydang" style="padding-left:25px">
+                            @if (th.NguoiTimViec.GioiTinh == 1)
+                                {
+                                <span>&nbsp;Nam / @Html.FormatValue(th.NguoiTimViec.NgaySinh, "{0:dd/MM/yyyy}") / </span>
+                                }
+                                else
+                                {
+                                <span>&nbsp;Nữ , @Html.FormatValue(th.NguoiTimViec.NgaySinh, "{0:dd/MM/yyyy}") / </span>
+                                }
+                                <span>&nbsp;@Html.FormatValue(th.NgayCapNhat, "{0:dd/MM/yyyy}")</span>
+                        </div>
+
+                    </div>
+                </div>
+                }
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-12" style="text-align:right">
+                <a href="/NTV/NTV_Main" class="btn btn-info   text-uppercase" style="font-weight: bold; line-height: 30px;text-decoration:underline;margin-top:25px; "><i class="fa fa-search"></i>&nbsp;Tra cứu hồ sơ tìm việc</a>
+            </div>
+        </div>
+    </div>
+                <script>
+                    $(".item-jobpost").mouseenter(function () {
+                        $(this).css("color", "#006fc7");
+                        $(this).find(".item_hover").css("color", "#006fc7");
+
+                    }).mouseleave(function () {
+                        $(this).css("color", "black");
+                        $(this).find(".item_hover").css("color", "black");
+
+                    });
+                </script>

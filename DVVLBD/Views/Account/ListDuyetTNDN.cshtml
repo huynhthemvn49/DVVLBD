@@ -1,0 +1,43 @@
+﻿@*<div class="row">
+    <div class="col-lg-6">
+    </div>
+    <div class="col-lg-3">
+        <a href="/Account/DuyetTatCaDN" class="btn btn-info pull-right" style="background: #31b0d5; color: white">
+            <span class="fa fa-check-circle"></span>&nbsp;Duyệt Tất Cả
+        </a>
+    </div>
+    <div class="col-lg-3">
+        <a href="/Account/HuyDuyetTatCaDN" class="btn btn-success pull-right" style="background: #eea236; color: white">
+            <span class="fa fa-remove"></span>&nbsp;Hủy Duyệt Tất Cả
+        </a>
+    </div>
+</div>*@
+<table class="table table-striped table-bordered table-hover ">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nội dung tin nhắn</th>
+            <th>Tên doanh nghiệp nhận</th>
+            <th>Ngày gửi</th>
+            <th>Xóa</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (ViewBag.DuyetTinNhan != null)
+        {
+            foreach (DVVLBD.Models.dvvlBD.GuiHSChoDN item in ViewBag.DuyetTinNhan)
+            {
+                <tr>
+                    <td>@item.ID_GuiHSChoDN</td>
+                    <td>@item.TinNhanNTV</td>
+                    <td>@item.DoanhNghiep.TenDoanhNghiep</td>
+                    <td>@Html.FormatValue(item.NgayTao, "{0:dd/MM/yyyy}")</td>
+                    <td class="center">
+                        @*<a class="btn btn-danger btnduyet" style="color: #fff; background-color: #d9534f; border-color: #d43f3a;" href="/Account/DuyetTinNhan/@item.ID_GuiHSChoDN"><span class="glyphicon glyphicon-check"></span></a>*@
+                        <a class="btn btn-warning" onclick="return btnXoaHSTD()" style="color: #fff; background-color: #f0ad4e; border-color: #eea236;" href="/Account/HuyDuyetTinNhan/@item.ID_GuiHSChoDN"><span class="glyphicon glyphicon-trash"></span></a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

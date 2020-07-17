@@ -1,0 +1,42 @@
+﻿<table class="table table-striped table-bordered table-hover ">
+    <thead>
+        <tr>
+            <th>UserID</th>
+            <th>Tên đăng nhập</th>
+            <th>Email</th>
+            <th>Loại tài khoản</th>
+            <th>Chi tiết/Xóa</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (ViewBag.NguoiDung != null)
+        {
+
+            foreach (DVVLBD.Models.dvvlBD.User item in ViewBag.NguoiDung)
+            {
+                <tr>
+                    <td>@item.ID_User</td>
+                    <td>@item.UserName</td>
+                    <td>@item.Email</td>
+                    @if (@item.Quyen == 2)
+                    {
+                        <td>Doanh nghiệp</td>
+                    }
+                    else if (@item.Quyen == 3)
+                    {
+                        <td>Người tìm việc</td>
+                    }
+                    else
+                    {
+                        <td>Admin</td>
+                    }
+                    <td class="center">
+                        <a class="btn btn-danger" style="color: #fff; background-color: #d9534f; border-color: #d43f3a;" href="/Account/User_Detail/@item.ID_User" target="_blank"><span class="glyphicon glyphicon-edit"></span></a>
+                        <a class="btn btn-warning" onclick="return btnXoaUser()" style="color: #fff; background-color: #f0ad4e; border-color: #eea236;" href="/Account/XoaUser/@item.ID_User"><span class="glyphicon glyphicon-trash"></span></a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+
+</table>

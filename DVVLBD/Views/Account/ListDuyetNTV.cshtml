@@ -1,0 +1,43 @@
+﻿<div class="row">
+    <div class="col-lg-6">
+    </div>
+    <div class="col-lg-3">
+        <a href="/Account/DuyetTatCaNTV" class="btn btn-info pull-right" style="background: #31b0d5; color: white">
+            <span class="fa fa-check-circle"></span>&nbsp;Duyệt Tất Cả
+        </a>
+    </div>
+    <div class="col-lg-3">
+        <a href="/Account/HuyDuyetTatCaNTV" class="btn btn-success pull-right" style="background: #eea236; color: white">
+            <span class="fa fa-remove"></span>&nbsp;Hủy Duyệt Tất Cả
+        </a>
+    </div>
+</div>
+<table class="table table-striped table-bordered table-hover ">
+    <thead>
+        <tr>
+            <th>NTVid</th>
+            <th>Họ tên</th>
+            <th>Tên Hồ sơ</th>
+            <th>Lượt xem</th>
+            <th>Check/Hủy</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (ViewBag.DuyetHoSoNTV != null)
+        {
+            foreach (DVVLBD.Models.dvvlBD.NguoiTimViec_HS item in ViewBag.DuyetHoSoNTV)
+            {
+                <tr>
+                    <td>@item.ID_HSXinViec</td>
+                    <td>@item.NguoiTimViec.HoTen</td>
+                    <td>@item.TenHSXinViec</td>
+                    <td>@item.LuotXem</td>
+                    <td class="center">
+                        <a class="btn btn-danger btnduyet" style="color: #fff; background-color: #d9534f; border-color: #d43f3a;" href="/Account/DuyetHoSoNTV/@item.ID_HSXinViec"><span class="glyphicon glyphicon-check"></span></a>
+                        <a class="btn btn-warning" onclick="return btnHUyDuyetHSNTV()" style="color: #fff; background-color: #f0ad4e; border-color: #eea236;" href="/Account/HuyDuyetHoSoNTV/@item.ID_HSXinViec"><span class="glyphicon glyphicon-trash"></span></a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

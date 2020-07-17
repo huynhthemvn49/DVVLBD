@@ -1,0 +1,122 @@
+﻿@{
+    ViewBag.Title = "Trang Chủ";
+}
+<link href="~/Content/css/cssUpdate1707.css" rel="stylesheet" />
+<div class="row">
+    <div class="col-md-12">
+        @Html.Partial("_Slide")
+    </div>
+</div>
+
+<div class="row boxSearch text-center">
+      
+    <div class="col-md-3 col-sm-3" id="tiemKiem">
+        <select class="form-control" id="LoaiTK">
+            <option value="1">Người tìm việc</option>
+            <option value="2" selected>Tuyển dụng</option>
+        </select>
+    </div>
+
+    <div class="ChonTD">
+        @using (Html.BeginForm("DSTDTheoTuKhoa", "TD", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <div class="col-md-7 col-sm-7 tk-tukhoa">
+                <i class="fa fa-tag"></i>
+                <input type="text" class="form-control" placeholder=" Tên Cty hoặc tiêu đề hồ sơ tuyển dụng " name="ChuoiTimKiem">
+            </div>
+
+            <div class="col-md-2 col-sm-2" style="line-height:36px">
+                <button class="btn btn-danger btn-width btn-send-msg">
+                    <span><i class="fa fa-search"></i> Tìm Cty</span>
+                </button>
+            </div>
+
+            <div class="form-group" style="display:none">
+                <div class="input-group input-group-lg">
+                    <div class="input-group-addon">
+                        <i class="fa fa-map-marker"></i>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="ChonNTV" style="display:none">
+        @using (Html.BeginForm("DSNTVTheoTuKhoa", "NTV", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <div class="col-md-7 col-sm-7 tk-tukhoa">
+                <i class="fa fa-tag"></i>
+                <input type="text" class="form-control" placeholder=" Tên hoặc tiêu đề hồ sơ ứng viên..." name="ChuoiTimKiemNTV">
+            </div>
+
+            <div class="col-md-2 col-sm-2" style="line-height:36px">
+                <button class="btn btn-danger btn-width btn-send-msg">
+                    <span><i class="fa fa-search"></i>Tìm Người LD</span>
+                </button>
+            </div>
+
+            <div class="form-group" style="display:none">
+                <div class="input-group input-group-lg">
+                    <div class="input-group-addon">
+                        <i class="fa fa-map-marker"></i>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12 col-sm-12 TD-TV">
+        <div class="row" style="margin:0">
+            <div class="col-lg-12 col-md-12 about-box" style="  padding:0; ">
+                <div class="tab_container">
+                    <input id="tab1" type="radio" name="tabs" checked class="input_tab">
+                    <label for="tab1" style="margin-bottom: 0; font-family: arial, sans-serif;font-size:14px;line-height:1.1;font-weight:bold " class="label_tab">
+                        <span>TUYỂN DỤNG</span>
+                    </label>
+                    <input id="tab2" type="radio" name="tabs" class="input_tab">
+                    <label for="tab2" class="label_tab" style="margin-bottom: 0; font-family: arial, sans-serif; font-size: 14px; line-height: 1.1; font-weight: bold; ">
+                        <span>NGƯỜI TÌM VIỆC</span>
+                    </label>
+
+                    <section id="content1" class="tab-content" style=" border-top: 3px solid #006fc7; box-shadow: 0 5px 11px 0px rgba(0,0,0,0.25);">
+                        @Html.Action("LastestJob", "Home")
+                    </section>
+                    <section id="content2" class="tab-content" style=" border-top: 3px solid #006fc7; box-shadow: 0 5px 11px 0px rgba(0,0,0,0.25);">
+                        @Html.Action("LastestCandidate", "Home")
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        @Html.Action("HighSalaryJob", "Home")
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        @Html.Action("TDTheoKV", "Home")
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        //set gia tri mac định cho form tim kiem
+        $('#tiemKiem select').val('2');
+
+    });
+    $('#LoaiTK').change(function () {
+        var va = $(this).val();
+        if (va === "1") {
+            $('.ChonTD').css("display", "none");
+            $('.ChonNTV').css("display", "block");
+        } else {
+            $('.ChonNTV').css("display", "none");
+            $('.ChonTD').css("display", "block");
+        }
+    });
+</script>

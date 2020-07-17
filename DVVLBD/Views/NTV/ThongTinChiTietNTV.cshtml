@@ -1,0 +1,153 @@
+﻿@model DVVLBD.Models.dvvlBD.NguoiTimViec
+@{
+    ViewBag.Title = "Thông tin chi tiết Người Tìm Việc";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/css/style.css" rel="stylesheet" />
+<link href="~/Content/css/TD_LD_Style.css" rel="stylesheet" />
+<section class="bg-white">
+    <div class="container">
+            <div class="container row">
+                <div class="col-md-8">
+                    <div class="padding-right">
+                        <div class="company-info">
+                            @if (@Model.AnhDaiDien != null)
+                            {
+                                var anh = Model.AnhDaiDien;
+                                <img class="Phu_imgTD_hot" style="margin-top:10px" src="~/Images/NTV_Images/@anh" />
+                            }
+                            <div class="content">
+                                @if (@Model.HoTen != "")
+                                {
+                                    var up = Model.HoTen;
+                                    <h4 style="color: #3504c6">@up</h4>
+                                }
+                                <h4> Số CMND : @Model.CMND   </h4>
+                                <h4>Số điện thoại liên hệ : @Model.DienThoai   </h4>
+                                <span>
+                                    <a href="#" style="font-family:monospace;color:red" title="Ngày Tạo">
+                                        <i class="fa fa-calendar"></i>&nbsp;Ngày tạo : @Html.FormatValue(@Model.NgayTao, "{0:dd/MM/yyyy}")
+                                    </a>
+                                </span>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <h3 style="padding:10px; color:#3504c6; text-decoration:underline;">Bằng Cấp, Học Vấn</h3>
+                        <ul class="list-1" style="font-size:16px;">
+                            <li><strong>Trình độ văn hóa:</strong><br /> <span style="margin-left:180px;">@Model.DM_HocVan.TenHocVan</span></li>
+                            <li><strong>Trình độ chuyên môn:</strong><br /> <span style="margin-left:180px;">@Model.DM_TrinhDo.TenTrinhDo</span></li>
+                            <li><strong>Trình độ ngoại ngữ:</strong><br /> <span style="margin-left:180px;">@Model.DM_NghiepVuNN.TenNghiepVu</span></li>
+                            <li><strong>Trình độ tin học:</strong><br /> <span style="margin-left:180px;">@Model.DM_NghiepVuTH.TenNghiepVu</span></li>
+                            <li><strong>Ngành nghề đào tạo:</strong><br /> <span style="margin-left:180px;">@Model.DM_NganhDaoTao.TenNganhDaoTao</span></li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="widget">
+                            <h4 style="font-family: monospace;">THÔNG TIN CÁ NHÂN</h4>
+                            <div class="job-overview">
+                                <ul style="font-size:16px;">
+                                    <li>
+                                        <i class="fa fa-calendar"></i>
+                                        <div>
+                                            <strong style="font-family:monospace">Ngày sinh:</strong>
+                                            <span>@Html.FormatValue(@Model.NgaySinh, "{0:dd/MM/yyyy}")</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-venus-mars"></i>
+                                        <div>
+                                            <strong style="font-family:monospace">Giới tính:</strong>
+                                            @if (@Model.GioiTinh == 1)
+                                            {
+                                                <span>Nam</span>
+                                            }
+                                            else
+                                            {
+                                                <span>Nữ</span>
+                                            }
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-envelope"></i>
+                                        <div>
+                                            <strong style="font-family:monospace">Email:</strong>
+                                            <span>@Model.Email</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-users"></i>
+                                        <div>
+                                            <strong style="font-family:monospace">Dân tộc:</strong>
+                                            <span>@Model.DM_DanToc.TenDanToc</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-certificate"></i>
+                                        <div>
+                                            <strong style="font-family:monospace">Tôn giáo:</strong>
+                                            <span>@Model.DM_TonGiao.TenTonGiao</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-user"></i>
+                                        <div>
+                                            <strong style="font-family:monospace">Tình trạng hôn nhân:</strong>
+                                            @if (@Model.TinhTrangHonNhan == 1)
+                                            {
+                                                <span>Độc thân</span>
+                                            }
+                                            else
+                                            {
+                                                <span>Đã có gia đình</span>
+                                            }
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-map-marker"></i>
+                                        <div>
+                                            <strong style="font-family:monospace">Địa chỉ:</strong>
+                                            <span>@Html.Raw(Model.DiaChi)</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="row" style="margin-left:180px; margin-right:40px; width:800px">
+        <div class="panel panel-info">
+            <div class="panel-heading text-center" style="font-family:monospace">
+                <b>Hồ sơ của ứng viên</b>
+                <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
+            </div>
+            <div class="panel-body">
+                @foreach (DVVLBD.Models.dvvlBD.NguoiTimViec_HS hskhac in ViewBag.HSkhac)
+                {
+                    <div class="item-jobpost">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h5>
+                                    <a class="Phu_header" href="/NTV/NTV_Detail/@hskhac.ID_HSXinViec">@hskhac.TenHSXinViec</a>
+                                </h5>
+                            </div>
+                            <div class="col-md-4 jobpost-location">
+                                <span><i class="fa fa-money m-r-10"></i>&nbsp;Ngày tạo: @Html.FormatValue(@hskhac.NgayTao, "{0:dd/MM/yyyy}")</span><br />
+                                <span><i class="fa fa-folder-open m-r-10"></i>&nbsp;Kinh nghiệm: @hskhac.KinhNghiem năm kinh nghiệm</span><br />
+                            </div>
+                            <div class="col-md-4 jobpost-apply-btn">
+                                <a href="/NTV/NTV_Detail/@hskhac.ID_HSXinViec" class="btn btn-primary btn-block btn-outline btn-sm">Chi tiết <i class="fa fa-angle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+
+        </div>
+    </div>
+</section>

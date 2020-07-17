@@ -1,0 +1,103 @@
+﻿.input-group.input-group-lg input.form-control {
+        height: 55px;
+    }
+    .input-group .input-group-addon + .form-control {
+        padding-left: 47px;
+    }
+    .input-group > .form-control {
+        padding-right: 45px;
+    }
+    .input-group .form-control {
+        overflow: hidden;
+        position: relative;
+        border-top-left-radius: 4px !important;
+        -moz-border-top-left-radius: 4px !important;
+        -o-border-top-left-radius: 4px !important;
+        -ms-border-top-left-radius: 4px !important;
+        -webkit-border-top-left-radius: 4px !important;
+        border-bottom-left-radius: 4px !important;
+        -moz-border-bottom-left-radius: 4px !important;
+        -o-border-bottom-left-radius: 4px !important;
+        -ms-border-bottom-left-radius: 4px !important;
+        -webkit-border-bottom-left-radius: 4px !important;
+    }
+    input.form-control, select.form-control {
+        padding: 0 18px;
+        height: 45px;
+    }
+    .form-control {
+        -webkit-box-shadow: 0 0 0 0 white;
+        -moz-box-shadow: 0 0 0 0 white;
+        -ms-box-shadow: 0 0 0 0 white;
+        -o-box-shadow: 0 0 0 0 white;
+        box-shadow: 0 0 0 0 white;
+        border-color: #eeeeee;
+        border-radius: 4px;
+        -moz-border-radius: 4px;
+        -o-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        font-weight: lighter;
+        font-family: monospace;
+    }
+    
+        .input-group.input-group-lg .input-group-addon {
+            line-height: 57px;
+        }
+        .input-group .input-group-addon {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            top: 0;
+            z-index: 4;
+            padding: 0 20px;
+            line-height: 47px;
+            width: auto;
+            border: none;
+            background: none;
+            font-size: 16px;
+            color: #bcbcbc;
+            
+        }
+    .btn.btn-lg {
+        padding: 0 30px;
+        height: 55px;
+        line-height: 53px;
+        font-size: 18px;
+    }
+    .btn.btn-primary {
+        background: #00ccff;
+        color: white;
+        border-color: #00ccff;
+    }
+    .waves-button, .waves-button:hover, .waves-button:visited, .waves-button-input {
+        white-space: nowrap;
+        vertical-align: middle;
+        cursor: pointer;
+        outline: 0;
+        text-align: center;
+        text-decoration: none;
+        z-index: 1;
+
+    }
+
+    waves.min.css:8 .waves-button, .waves-circle {
+        -webkit-transform: translateZ(0);
+        -moz-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+        -o-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+
+    waves.min.css:8 .waves-effect {
+        position: relative;
+        cursor: pointer;
+        display: inline-block;
+        overflow: hidden;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+        
+    }

@@ -1,0 +1,445 @@
+﻿<style>
+    .d-block {
+        display: block !important;
+    }
+
+    .d-none {
+        display: none !important;
+    }
+
+    .thaydoimaunen {
+        background-color: #808080 !important;
+    }
+</style>
+
+<div class="panel-heading">
+    <h4 class="panel-title" id="btnh4">
+        <a class="btn btn-danger btn-width btn-send-msg btnactive thaydoimaunen" id="ss" onclick="QuanLyHSNTV();">Quản lý hồ sơ</a>
+        <a class="btn btn-danger btn-width btn-send-msg btnactive" id="sss" onclick="DuyetHSNTV();">Duyệt hồ sơ</a>
+        <a class="btn btn-danger btn-width btn-send-msg btnactive" id="ssss" onclick="DuyetTNNTV();">Quản lý tin nhắn</a>
+    </h4>
+</div>
+
+<div id="qlhsntv" class="tab-pane fade in active" style="display:block">
+    <div class="about-container" style="background:none">
+        <div id="wrapper">
+            <div id="page-wrapper">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                Danh Sách Hồ Sơ Tìm Việc _ Đã Được Duyệt
+                            </div>
+                            <div id="list" class="panel-body">
+                                <table class="table table-striped table-bordered table-hover ">
+                                    <thead>
+                                        <tr>
+                                            <th>NTVid</th>
+                                            <th>Họ tên</th>
+                                            <th>Tên Hồ sơ</th>
+                                            <th>Lượt xem</th>
+                                            <th>Chi tiết/Xóa</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @if (ViewBag.NguoiTimViec != null)
+                                        {
+
+                                            foreach (DVVLBD.Models.dvvlBD.NguoiTimViec_HS item in ViewBag.NguoiTimViec)
+                                            {
+                                                <tr>
+                                                    <td>@item.ID_HSXinViec</td>
+                                                    <td>@item.NguoiTimViec.HoTen</td>
+                                                    <td>@item.TenHSXinViec</td>
+                                                    <td>@item.LuotXem</td>
+                                                    <td class="center">
+                                                        <a class="btn btn-danger" style="color: #fff; background-color: #d9534f; border-color: #d43f3a;" href="/NTV/NTV_Detail/@item.ID_HSXinViec" target="_blank"><span class="glyphicon glyphicon-edit"></span></a>
+                                                        <a class="btn btn-warning" onclick="return btnXoaHSXV()" style="color: #fff; background-color: #f0ad4e; border-color: #eea236;" @*href="/Account/XoaHSTD/@item.ID_HSTuyenDung"*@><span class="glyphicon glyphicon-trash"></span></a>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        }
+                                    </tbody>
+
+                                </table>
+                            </div>
+                            <div class="panel-footer">
+                                <ul class="pager" id="pager2">
+                                    <li><a><span class="glyphicon glyphicon-chevron-left"></span></a></li>
+                                    <li><a><span class="glyphicon glyphicon-chevron-right"></span></a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="dhsntv" class="tab-pane fade in active" style="display:none">
+    <div class="about-container" style="background:none">
+        <div id="wrapper">
+            <div id="page-wrapper">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                Danh Sách Hồ Sơ Xin Việc _ Chờ Được Duyệt
+                            </div>
+                            <div id="listduyet" class="panel-body">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <a href="/Account/DuyetTatCaNTV" class="btn btn-info pull-right" style="background: #31b0d5; color: white">
+                                            <span class="fa fa-check-circle"></span>&nbsp;Duyệt Tất Cả
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <a href="/Account/HuyDuyetTatCaNTV" class="btn btn-success pull-right" style="background: #eea236; color: white">
+                                            <span class="fa fa-remove"></span>&nbsp;Hủy Duyệt Tất Cả
+                                        </a>
+                                    </div>
+                                </div>
+                                <table class="table table-striped table-bordered table-hover ">
+                                    <thead>
+                                        <tr>
+                                            <th>NTVid</th>
+                                            <th>Họ tên</th>
+                                            <th>Tên Hồ sơ</th>
+                                            <th>Lượt xem</th>
+                                            <th>Chi tiết/Duyệt/Hủy</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @if (ViewBag.DuyetHoSoNTV != null)
+                                        {
+                                            foreach (DVVLBD.Models.dvvlBD.NguoiTimViec_HS item in ViewBag.DuyetHoSoNTV)
+                                            {
+                                                <tr>
+                                                    <td>@item.ID_HSXinViec</td>
+                                                    <td>@item.NguoiTimViec.HoTen</td>
+                                                    <td>@item.TenHSXinViec</td>
+                                                    <td>@item.LuotXem</td>
+                                                    <td class="center">
+                                                        <a class="btn btn-danger" style="color: #fff; background-color: #31b0d5; border-color: #31b0d5; " href="/NTV/NTV_Detail/@item.ID_HSXinViec" target="_blank"><span class="glyphicon glyphicon-edit"></span></a>
+                                                        <a class="btn btn-danger btnduyet" style="color: #fff; background-color: #d9534f; border-color: #d43f3a;" href="/Account/DuyetHoSoNTV/@item.ID_HSXinViec"><span class="glyphicon glyphicon-check"></span></a>
+                                                        <a class="btn btn-warning" onclick="return btnHUyDuyetHSNTV()" style="color: #fff; background-color: #f0ad4e; border-color: #eea236;" href="/Account/HuyDuyetHoSoNTV/@item.ID_HSXinViec"><span class="glyphicon glyphicon-trash"></span></a>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="panel-footer">
+                                <ul class="pager" id="pager3">
+                                    <li><a><span class="glyphicon glyphicon-chevron-left"></span></a></li>
+                                    <li><a><span class="glyphicon glyphicon-chevron-right"></span></a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="tnntv" class="tab-pane fade in active" style="display:none">
+    <div class="about-container" style="background:none">
+        <div id="wrapper">
+            <div id="page-wrapper">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                Danh Sách Tin Nhắn
+                            </div>
+                            <div id="listduyettinnhan" class="panel-body">
+                                @*<div class="row">
+                                        <div class="col-lg-6">
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <a href="/Account/DuyetTatCaTNNTV" class="btn btn-info pull-right" style="background: #31b0d5; color: white">
+                                                <span class="fa fa-check-circle"></span>&nbsp;Duyệt Tất Cả
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <a href="/Account/HuyDuyetTatCaTNNTV" class="btn btn-success pull-right" style="background: #eea236; color: white">
+                                                <span class="fa fa-remove"></span>&nbsp;Hủy Duyệt Tất Cả
+                                            </a>
+                                        </div>
+                                    </div>*@
+                                <table class="table table-striped table-bordered table-hover ">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Nội dung tin nhắn</th>
+                                            <th>Tên người tìm việc nhận</th>
+                                            <th>Ngày gửi</th>
+                                            <th>Xóa</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @if (ViewBag.DuyetTinNhanNTV != null)
+                                        {
+                                            foreach (DVVLBD.Models.dvvlBD.GuiHSChoNTV item in ViewBag.DuyetTinNhanNTV)
+                                            {
+                                                <tr>
+                                                    <td>@item.ID_GuiHSChoNTV</td>
+                                                    <td>@item.TinNhanDN</td>
+                                                    <td>@item.NguoiTimViec.HoTen</td>
+                                                    <td>@Html.FormatValue(item.NgayTao, "{0:dd/MM/yyyy}")</td>
+                                                    <td class="center">
+                                                        @*<a class="btn btn-danger btnduyet" style="color: #fff; background-color: #d9534f; border-color: #d43f3a;" href="/Account/DuyetTinNhanNTV/@item.ID_GuiHSChoNTV"><span class="glyphicon glyphicon-check"></span></a>*@
+                                                        <a class="btn btn-warning" onclick="return btnHuyDuyetTNNTV()" style="color: #fff; background-color: #f0ad4e; border-color: #eea236;" href="/Account/HuyDuyetTinNhanNTV/@item.ID_GuiHSChoNTV"><span class="glyphicon glyphicon-trash"></span></a>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="panel-footer">
+                                <ul class="pager" id="pager4">
+                                    <li><a><span class="glyphicon glyphicon-chevron-left"></span></a></li>
+                                    <li><a><span class="glyphicon glyphicon-chevron-right"></span></a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden" id="demntv" name="demntv" value="@Session["demntv"]" />
+<input type="hidden" id="demduyetntv" name="demduyetntv" value="@Session["demduyetntv"]" />
+<input type="hidden" id="demtnntv" name="demtnntv" value="@Session["demtnntv"]" />
+<input type="hidden" id="duyet" name="duyet" value="@Session["duyet"]" />
+@if (TempData["th"] == "tb")
+{
+    <script>
+        alertify.success('Duyệt Thành Công');
+    </script>
+}
+else if (TempData["th"] == "bt")
+{
+    <script>
+        alertify.error('Lỗi! Xin thử lại');
+    </script>
+}
+<script type="text/javascript">
+    function btnHuyDuyetTNNTV() {
+        if (confirm("Bạn có thật sự muốn xóa?"))
+            return true;
+        else
+            return false;
+    }
+</script>
+<script type="text/javascript">
+    function btnXoaHSXV() {
+        if (confirm("Bạn có thật sự muốn xóa?"))
+            return true;
+        else
+            return false;
+    }
+</script>
+
+
+<script>
+    ///////////quản lý doanh nghiệp
+    $(function () {
+        var pageNo = 0;
+        var pageSize = 5;
+        var ii = $('#demntv').val();
+
+        $("#pager2 a:eq(0)").click(function () {
+            if (pageNo > 0)
+                pageNo = pageNo - 1;
+            else
+                pageNo = 0;
+            $.ajax({
+                url: "/Account/QuanLyNguoiTimViecSkip",
+                data: { pageNo: pageNo, pageSize: pageSize },
+                success: function (respone) {
+                    $("#list").html('');
+                    $("#list").html(respone);
+                }
+            });
+        });
+
+        $("#pager2 a:eq(1)").click(function () {
+            if (pageNo < ii)
+                pageNo++;
+            $.ajax({
+                url: "/Account/QuanLyNguoiTimViecSkip",
+                data: { pageNo: pageNo, pageSize: pageSize },
+                success: function (respone) {
+                    $("#list").html('');
+                    $("#list").html(respone);
+                }
+            });
+        });
+    });
+    ///////quản lý duyệt doanh nghiệp
+    $(function () {
+        var pageNo = 0;
+        var pageSize = 5;
+        var ii = $('#demduyetntv').val();
+
+        $("#pager3 a:eq(0)").click(function () {
+            if (pageNo > 0)
+                pageNo = pageNo - 1;
+            else
+                pageNo = 0;
+            $.ajax({
+                url: "/Account/QuanLyDuyetNguoiTimViecSkip",
+                data: { pageNo: pageNo, pageSize: pageSize },
+                success: function (respone) {
+                    $("#listduyet").html('');
+                    $("#listduyet").html(respone);
+                }
+            });
+        });
+
+        $("#pager3 a:eq(1)").click(function () {
+            if (pageNo < ii)
+                pageNo++;
+            $.ajax({
+                url: "/Account/QuanLyDuyetNguoiTimViecSkip",
+                data: { pageNo: pageNo, pageSize: pageSize },
+                success: function (respone) {
+                    $("#listduyet").html('');
+                    $("#listduyet").html(respone);
+                }
+            });
+        });
+    });
+    //////////quản lý duyệt tin nhắn doanh nghiệp
+    $(function () {
+        var pageNo = 0;
+        var pageSize = 5;
+        var ii = $('#demtnntv').val();
+
+        $("#pager4 a:eq(0)").click(function () {
+            if (pageNo > 0)
+                pageNo = pageNo - 1;
+            else
+                pageNo = 0;
+            $.ajax({
+                url: "/Account/QuanLyDuyetTNNTVSkip",
+                data: { pageNo: pageNo, pageSize: pageSize },
+                success: function (respone) {
+                    $("#listduyettinnhan").html('');
+                    $("#listduyettinnhan").html(respone);
+                }
+            });
+        });
+
+        $("#pager4 a:eq(1)").click(function () {
+            if (pageNo < ii)
+                pageNo++;
+            $.ajax({
+                url: "/Account/QuanLyDuyetTNNTVSkip",
+                data: { pageNo: pageNo, pageSize: pageSize },
+                success: function (respone) {
+                    $("#listduyettinnhan").html('');
+                    $("#listduyettinnhan").html(respone);
+                }
+            });
+        });
+    });
+
+    function loadQuanLyHSNTV() {
+        if ($("#qlhsntv").css('display') == 'none') {
+            $("#qlhsntv").addClass('d-block');
+            $("#qlhsntv").removeClass('d-none');
+            $("#dhsntv").addClass('d-none');
+            $("#dhsntv").removeClass('d-block');
+            $("#tnntv").addClass('d-none');
+            $("#tnntv").removeClass('d-block');
+        }
+        else {
+            $("#dhsntv").removeClass('d-block');
+            $("#dhsntv").addClass('d-none');
+            $("#tnntv").removeClass('d-block');
+            $("#tnntv").addClass('d-none');
+        }
+    };
+    function loadDuyetHSNTV() {
+        if ($("#dhsntv").css('display') == 'none') {
+            $("#dhsntv").addClass('d-block');
+            $("#dhsntv").removeClass('d-none');
+            $("#qlhsntv").addClass('d-none');
+            $("#qlhsntv").removeClass('d-block');
+            $("#tnntv").addClass('d-none');
+            $("#tnntv").removeClass('d-block');
+        }
+        else {
+            $("#qlhsntv").removeClass('d-block');
+            $("#qlhsntv").addClass('d-none');
+            $("#tnntv").removeClass('d-block');
+            $("#tnntv").addClass('d-none');
+        }
+    };
+    function loadDuyetTNNTV() {
+        if ($("#tnntv").css('display') == 'none') {
+            $("#tnntv").addClass('d-block');
+            $("#tnntv").removeClass('d-none');
+            $("#qlhsntv").addClass('d-none');
+            $("#qlhsntv").removeClass('d-block');
+            $("#dhsntv").addClass('d-none');
+            $("#dhsntv").removeClass('d-block');
+        }
+        else {
+            $("#qlhs").removeClass('d-block');
+            $("#qlhs").addClass('d-none');
+            $("#dhs").removeClass('d-block');
+            $("#dhs").addClass('d-none');
+        }
+    };
+    QuanLyHSNTV = function () {
+        loadQuanLyHSNTV();
+    };
+    DuyetHSNTV = function () {
+        loadDuyetHSNTV();
+    };
+    DuyetTNNTV = function () {
+
+        loadDuyetTNNTV();
+    }
+    var header = document.getElementById("btnh4");
+    var btns = header.getElementsByClassName("btnactive");
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function () {
+            var current = document.getElementsByClassName("thaydoimaunen");
+            current[0].className = current[0].className.replace(" thaydoimaunen", "");
+            this.className += " thaydoimaunen";
+        });
+    }
+
+    var duyet = $('#duyet').val();
+
+    if (duyet == "ssntv") {
+        loadQuanLyHSNTV();
+        $("#ssss").removeClass('thaydoimaunen');
+        $("#sss").removeClass('thaydoimaunen');
+        $("#ss").addClass('thaydoimaunen');
+    }
+    else if (duyet == "okntv") {
+        loadDuyetHSNTV();
+        $("#sss").addClass('thaydoimaunen');
+        $("#ss").removeClass('thaydoimaunen');
+        $("#ssss").removeClass('thaydoimaunen');
+    }
+    else if (duyet == "tnntv") {
+        loadDuyetTNNTV();
+        $("#ssss").addClass('thaydoimaunen');
+        $("#ss").removeClass('thaydoimaunen');
+        $("#sss").removeClass('thaydoimaunen');
+    }
+</script>

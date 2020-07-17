@@ -1,0 +1,435 @@
+﻿
+#video_player {
+    display: table;
+    font-size: 0;
+    background:white;
+}
+
+    #video_player video,
+    #video_player figcaption {
+        display: table-cell;
+        vertical-align: top;
+    }
+
+    #video_player figcaption {
+        width: 25%;
+    }
+
+        #video_player figcaption a {
+            display: block;
+            opacity: .5;
+            transition: 1s opacity;
+        }
+
+            #video_player figcaption a img,
+            figure video {
+                width: 100%;
+                height: auto;
+            }
+
+            #video_player figcaption a:hover {
+                opacity: 1;
+            }
+
+
+#video_player {
+    padding-top:10px;
+    display: table;
+    font-size: 0;
+    background:#3d3b3b;
+}
+
+    #video_player video
+    #video_player figcaption {
+        display: table-cell;
+        vertical-align: top;
+    }
+
+    #video_player figcaption {
+        width: 25%;
+    }
+
+        #video_player figcaption a {
+            display: block;
+            opacity: .5;
+            transition: 1s opacity;
+        }
+
+            #video_player figcaption a img,
+            figure video {
+                width: 100%;
+                height: auto;
+            }
+
+            #video_player figcaption a:hover {
+                opacity: 1;
+            }
+
+/*HOVER*/
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #008CBA;
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    transition: 0.5s ease;
+}
+
+#v1:hover .overlay {
+    width: 100%;
+}
+#v1 {
+    border-radius:15px
+}
+#v2 {
+    border-radius:15px
+}
+#v3 {
+    border-radius:15px
+}
+#v4 {
+    border-radius:15px
+}
+#v5 {
+    border-radius:15px
+}
+
+/*VIDEO 5,6,7,8*/
+/*#hide {
+    display: none;
+}*/
+#hide {
+    display:none;
+}
+#hide2 {
+    display: none;
+}
+
+
+
+/*CÁC BUTTON ẨN HIỆN THÊM VIDEO*/
+#btn_hien1 {
+    border:solid;
+    border-width:1px;
+    background-color:rgba(224, 16, 16, 0.77);
+}
+#btn_hien1:hover {
+    background-color:white;
+}
+
+
+#btn_an1 {
+     border:solid;
+    border-width:1px;
+    background-color:rgba(164, 152, 152, 0.67)
+}
+
+#btn_an1:hover {
+    background-color:white;
+}
+
+
+#btn_hien2 {
+    border:solid;
+    border-width:1px;
+    background-color:rgba(224, 16, 16, 0.77);
+}
+#btn_hien2:hover {
+    background-color:white;
+}
+
+#btn_an2 {
+     border:solid;
+    border-width:1px;
+    background-color:rgba(164, 152, 152, 0.67)
+}
+
+#btn_an2:hover {
+    background-color:white;
+}
+
+/*BO TRÒN ẢNH*/
+
+
+
+/*PlayList Youtube*/
+.vid-container {
+	position: relative;
+	padding-bottom: 52%;
+	padding-top: 30px; 
+	height: 0; 
+}
+
+.vid-container iframe,
+.vid-container object,
+.vid-container embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.vid-list-container {
+	width: 92%;
+	overflow: hidden;
+	margin-top: 20px;
+	margin-left:4%;
+	padding-bottom: 20px;
+}
+
+.vid-list {
+	width: 1344px;
+	position: relative;
+	top:0;
+	left: 0;
+}
+
+.vid-item {
+	display: block;
+	width: 148px;
+	height: 148px;
+	float: left;
+	margin: 0;
+	padding: 10px;
+}
+
+.thumb {
+	overflow:hidden;
+	height: 84px;
+}
+
+.thumb img {
+	width: 100%;
+	position: relative;
+	top: -13px;
+}
+
+.vid-item .desc {
+	color: #21A1D2;
+	font-size: 15px;
+	margin-top:5px;
+}
+.arrows {
+	position:relative;
+	width: 100%;
+}
+
+.arrow-left {
+	color: #fff;
+	position: absolute;
+	background: #777;
+	padding: 15px;
+	left: -25px;
+	top: -130px;
+	z-index: 99;
+	cursor: pointer;
+}
+
+.arrow-right {
+	color: #fff;
+	position: absolute;
+	background: #777;
+	padding: 15px;
+	right: -25px;
+	top: -130px;
+	z-index:100;
+	cursor: pointer;
+}
+.div_video{
+    height:500px
+
+}
+.avatar_videocon{
+    width:100%;height:170px;
+}
+@media (max-width: 624px) {
+	.arrows {
+		position:relative;
+		margin: 0 auto;
+		width:96px;
+	}
+	.arrow-left {
+		left: 0;
+		top: -20px;
+	}
+
+	.arrow-right {
+		right: 0;
+		top: -20px;
+	}
+   .div_video{
+    height:250px
+
+}
+   .avatar_videocon{
+    width:100%;height:85px;
+}
+}
+
+
+@media only screen and (max-width: 768px){
+  
+    .style_prevu_kit h5 {
+        font-size:9px;
+    }
+    .style_prevu_kit a .icon1 {
+        height:40px;
+        width:40px;
+        position:absolute;
+    top: calc(50% - 20px);
+    left: calc(50% - 20px);
+    }
+    /*.ngaythang {
+        display:none;
+    }*/
+}
+
+
+/*CÁC HIỆU ỨNG HOVER*/
+.fond{position:absolute;padding-top:85px;top:0;left:0; right:0;bottom:0;
+ background-color:#00506b;}
+
+.style_prevu_kit
+{
+    background-color:black;
+    border-radius:1px;
+    display:inline-block;
+    border:0;
+    position: relative;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1); 
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1); 
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(0.1);
+    transition: all 200ms ease-in;
+    transform: scale(1);   
+
+}
+.style_prevu_kit:hover
+{
+    /*box-shadow: 0px 0px 100px #000000;*/
+    z-index: 2;
+    -webkit-transition: all 100ms ease-in;
+    -webkit-transform: scale(1.075);
+    -ms-transition: all 100ms ease-in;
+    -ms-transform: scale(1.075);   
+    -moz-transition: all 100ms ease-in;
+    -moz-transform: scale(1.075);
+    transition: all 100ms ease-in;
+    transform: scale(1.075);
+    box-shadow: 0 0 5px white; 
+}
+.style_prevu_kit:hover .icon1{
+    display:block;
+}
+#videocon {
+
+}
+
+.style_prevu_kit
+{
+    width:100%;
+    height:100%;
+}
+/*/////////các css điều khiển chính//////////*/
+.active1
+{
+    box-shadow: 0px 0px 150px #000000;
+    z-index: 2;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1.5);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1.5);   
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.5);
+    transition: all 200ms ease-in;
+    transform: scale(1.075);
+    /*box-shadow:0px 4px 10px 0px white;*/
+
+}
+.dem 
+{ 
+     display:none;
+}
+.active1  .dem{
+    display:block;
+    position: absolute;
+     color: white;
+     font-size: 14px; 
+     background-color: rgba(10, 3, 3, 0.8);
+     padding: 1px 1px 1px 1px;
+}
+
+/*BO TRÒN HÌNH ẢNH CÁC VIDEO*/
+.style_prevu_kit a img {
+    border-radius:1px;
+}
+
+/*#icon1 {
+    display:none;
+}*/
+
+
+
+
+
+#video_player {
+    margin-left:3%;
+    margin-right:3%;
+}
+
+
+/*HOVER ĐỔI MÀU ICON*/
+
+.icon1 {
+    display:none;
+}
+.icon1:hover {
+    opacity:0.7;
+}
+
+
+.icon1 {
+    width:70px;
+    height:70px;
+    position:absolute;
+    top: calc(50% - 35px);
+    left: calc(50% - 35px);
+}
+
+
+
+
+/*modal first show*/
+.modal-body {
+    position:relative;
+}
+.close {
+    position:absolute;
+    top:0;
+    right:0;
+    width:30px !important;
+    height:30px !important;
+    background-color:white !important;
+    border-radius:50% !important;
+    padding:5px 5px 5px 5px !important;
+    opacity:1 !important;
+}
+
+        @media only screen and (max-width: 600px) {
+        .modal-dialog  {
+            width: 70% !important ;
+            margin: auto !important ;
+        }
+    }
+    @media only screen and (max-width: 1000px) {
+        .modal-dialog {
+            width: 70% !important ;
+            margin: auto !important;
+        }
+    }

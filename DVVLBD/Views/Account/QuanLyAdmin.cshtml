@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "Admin quản lý Website";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <div class="col-sm-3">
+        @Html.Action("ChuyenMucAdmin", "Account")
+    </div>
+    <div class="col-sm-9" id="Candidate_Mana">
+        <script>
+            $(function () {
+                
+                $(".menu-content a:eq(0)").click(function () {
+                    $.ajax({
+                        url: "/Account/QuanLyNguoiDung",
+                        success: function (respone) {
+                            $("#Candidate_Mana").html(respone);
+                        }
+                    });
+                });
+                $(".menu-content a:eq(1)").click(function () {
+                    $.ajax({
+                        url: "/Account/QuanLyDoanhNghiep",
+                        success: function (respone) {
+                            $("#Candidate_Mana").html(respone);
+                        }
+                    });
+                });
+                $(".menu-content a:eq(2)").click(function () {
+                    $.ajax({
+                        url: "/Account/QuanLyNguoiTimViec",
+                        success: function (respone) {
+                            $("#Candidate_Mana").html(respone);
+                        }
+                    });
+                });
+                $(".menu-content a:eq(3)").click(function () {
+                    $.ajax({
+                        url: "/Account/QuanLyThongKe",
+                        success: function (respone) {
+                            $("#Candidate_Mana").html(respone);
+                        }
+                    });
+                });
+            });
+        </script>
+        @if (Session["quanly"] == null)
+        {
+            @Html.Action("QuanLyNguoiDung", "Account")
+        }
+        else if(Session["quanly"] == "dn")
+        {
+            @Html.Action("QuanLyDoanhNghiep", "Account")
+        }
+        else if(Session["quanly"] == "ntv")
+        {
+            @Html.Action("QuanLyNguoiTimViec", "Account")
+        }
+    </div>
+</div>
+

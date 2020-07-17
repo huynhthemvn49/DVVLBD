@@ -1,0 +1,85 @@
+﻿@{
+    ViewBag.Title = "Liên Hệ";
+}
+
+<div class="row" style="border-bottom: 3px solid #006fc7; margin: 0;">
+    <div class="col-lg-12" style="padding:0">
+        <span class="title-part">
+            <h5 class="contact">Thông Tin Liên Hệ</h5>
+        </span>
+    </div>
+</div>
+
+<div class="row" style="margin: 0; margin-top: 20px; padding-bottom: 24px;">
+    <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-12">
+                <p class="contacts">
+                    <i class="fa fa-map-marker color-red"></i> <b>Trụ sở chính</b>: 369 Đại Lộ Bình Dương, KP.Hòa Lân, Thuận Giao, Thuận An, Bình Dương<br>
+
+                </p>
+                <p class="contacts">
+                    <i class="glyphicon glyphicon-phone color-red"></i> <b>Số điện thoại</b>: (0274) 3.899.019<br>
+                </p>
+                <p class="contacts">
+                    <i class="glyphicon glyphicon-envelope color-red"></i> <b>Email</b>: phonggtvlbd@gmail.com
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 maps">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4658.147489635676!2d106.69558013699606!3d10.961897436337308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d1179d28bc51%3A0xb8eca68c37395554!2sTRUNG+TAM+DICH+VU+VIEC+LAM+BINH+DUONG!5e0!3m2!1sen!2s!4v1502420926603" frameborder="0" style="border:0;width:100%;height:250px" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div>
+            <div class="col-lg-12 col-md-12">
+                @using (Html.BeginForm("LienHeGopY", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    if (!Html.ValidationSummary().ToString().Contains(":none"))
+                    {
+                        <div class="alert alert-info alert-dismissable">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            @Html.ValidationSummary()
+                        </div>
+                    }
+                    <div id="home-send-message">
+                        <div class="form-group">
+                            <label for="name">Họ và tên</label>
+                            <input class="form-control" style="border-radius:0" id="customer_name" name="customer_name" type="text" value="" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="mobile">Số điện thoại</label>
+                            <input class="form-control" style="border-radius:0" id="phone" name="phone" type="number" value="" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input class="form-control" style="border-radius:0" id="email" name="email" type="email" value="" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="comment">Nội dung góp ý</label>
+                            <textarea class="form-control" style="border-radius:0" cols="20" id="msg_content" name="msg_content" rows="3" required></textarea>
+                        </div>
+                        <button class="btn btn-info btn-width btn-send-msg" style="float: right; background-color: #006fc7 !important;border-radius:0">Gửi thư <i class="glyphicon glyphicon-send"></i> </button>
+
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+@if (TempData["Data"] == "tc")
+{
+    <script>
+        alertify.success('Gửi Thành Công');
+    </script>
+}
+else if (TempData["Data"] == "tb")
+{
+    <script>
+        alertify.error('Lỗi! Xin thử lại');
+    </script>    
+}
+ 
